@@ -6,7 +6,7 @@ const FilterList = ({handleFilter}) => {
         {schools.map((school, index) => (
             <button style={{
                 marginTop: '5px'
-            }} onClick={() => handleFilter({school})} key={index+1}>#{school}</button>
+            }} onClick={() => handleFilter({school})} key={index+1}>{school}</button>
         ))}
     </div>
   );

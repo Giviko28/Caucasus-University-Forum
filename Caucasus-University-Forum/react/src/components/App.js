@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import {BrowserRouter as Router, Redirect, Route, Switch} from 'react-router-dom';
 import Home from './Home';
 import Authorization from './Authorization';
 import Registration from './Registration';
@@ -17,6 +17,9 @@ function App() {
                 </Route>
                 <Route exact path="/registration">
                     <Registration />
+                </Route>
+                <Route exact path='*'>
+                    <Redirect to='/' />
                 </Route>
             </Switch>
         </Router>
