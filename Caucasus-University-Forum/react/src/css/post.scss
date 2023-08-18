@@ -1,0 +1,134 @@
+$white: #FFFFFF;
+$green: #A9EF9A;
+$light-green: #DCEAD9;
+$black: #000000;
+$gray: #7C7C7C;
+
+.post {
+    background-color: $white;
+    width: 730px;
+    box-shadow: 0 5px 30px 0 rgba(0, 0, 0, 0.3);
+    border-radius: 25px;
+    margin-bottom: 30px;
+    height: 210px;
+    display: grid;
+    grid-template-columns: 1fr 6fr 1fr;
+    grid-template-rows: 1fr 2fr 1fr;
+
+    .profile-photo {
+        grid-row: 1;
+        grid-column: 1;
+        height: 60px;
+        width: 60px;
+        align-self: end;
+        margin-left: 15px;
+        margin-top: 15px;
+        cursor: pointer;
+
+        &:active {
+            transform: scale(0.95);
+        }
+    }
+
+    .user-name {
+        grid-row: 1;
+        grid-column: 2;
+        align-self: center;
+        justify-self: start;
+        transition: 0.3s linear;
+
+        h3 {
+            cursor: pointer;
+
+            &:hover {
+                color: $gray;
+            }
+
+            &:active {
+                transform: scale(0.95);
+            }
+        }
+    }
+
+    p {
+        grid-row: 2;
+        grid-column: 2;
+        justify-self: start;
+        align-self: start;
+        font-size: 18px;
+        height: 80px;
+        width: 548px;
+        // display: -webkit-box;
+        // overflow: hidden;
+        // -webkit-box-orient: vertical;
+        // -webkit-line-clamp: 3;
+        word-wrap: break-word;
+    }
+
+    .post-details {
+        grid-row: 3;
+        grid-column: 2;
+        width: 150px;
+        justify-self: start;
+        align-self: center;
+        display: flex;
+        flex-direction: row;
+        align-items: center;  
+        justify-content: space-between;              
+        margin-top: -10px;
+
+        .vl {
+            border-left: solid 3px $black;
+            height: 20px;
+        }
+    }
+
+    .reactions {
+        grid-row: 2;
+        grid-column: 3;
+        justify-self: center;
+        align-self: center;
+        margin-top: -25px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 120px;
+
+        .likes {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            button {
+                background: none;          
+                outline: none;      
+                border: none;
+                cursor: pointer;
+
+                &:active {
+                    transform: scale(0.95);
+                }
+            }
+        }
+
+        .dislikes {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            
+            button {
+                background: none;          
+                outline: none;      
+                border: none;
+                cursor: pointer;
+
+                &:active {
+                    transform: scale(0.95);
+                    
+                    
+                }
+
+            }
+        }
+    }
+}

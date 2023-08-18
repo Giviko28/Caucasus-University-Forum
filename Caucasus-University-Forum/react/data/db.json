@@ -1,0 +1,454 @@
+{
+  "posts":[
+    {
+      "author": "John",
+      "school": "CSB",
+      "body": "Lost my laptop in the library yesterday evening. It's a silver MacBook Pro. If found, please contact me. Reward offered for its safe return.",
+      "timestamp": "12:35",
+      "likes": 2328,
+      "dislikes": 23,
+      "id": 1
+    },
+    {
+      "author": "Maria",
+      "school": "CSL",
+      "body": "Looking for a math tutor to help with Calculus II. Willing to pay $20 per hour. Please message me if interested.",
+      "timestamp": "12:35",
+      "likes": 2034,
+      "dislikes": 123,
+      "id": 2
+    },
+    {
+      "author": "David",
+      "school": "CSM",
+      "body": "Looking for a roommate to share a 2-bedroom apartment near campus. Rent is affordable, and utilities are split. If interested, please DM me for more details.",
+      "timestamp": "12:35",
+      "likes": 1088,
+      "dislikes": 213,
+      "id": 3
+    },
+    {
+      "author": "Lisa",
+      "school": "CST",
+      "body": "Join us for a fun movie night this Friday at the student center. We'll be screening the latest blockbuster film. Free popcorn and drinks provided. Don't miss out!",
+      "timestamp": "12:35",
+      "likes": 865,
+      "dislikes": 423,
+      "id": 4
+    },
+    {
+      "author": "John",
+      "school": "CSA",
+      "body": "Join us for a thrilling movie night this Saturday at the student center. We'll be screening a classic action film. Free snacks and beverages provided. Don't miss it!",
+      "timestamp": "18:45",
+      "likes": 654,
+      "dislikes": 267,
+      "id": 5
+    },
+    {
+      "author": "Emily",
+      "school": "CSG",
+      "body": "Attention CSG students! The science club is organizing a stargazing event next week. Join us to explore the wonders of the night sky.",
+      "timestamp": "14:20",
+      "likes": 742,
+      "dislikes": 105,
+      "id": 6
+    },
+    {
+      "author": "Daniel",
+      "school": "CSH",
+      "body": "Join us for a coding workshop this Sunday at the student center. We'll be covering the basics of HTML and CSS. No prior experience required.",
+      "timestamp": "16:15",
+      "likes": 932,
+      "dislikes": 189,
+      "id": 7
+    },
+    {
+      "author": "Olivia",
+      "school": "CTS",
+      "body": "Attention CTS students! The photography club is organizing a photo walk in the park. Capture beautiful moments and improve your photography skills.",
+      "timestamp": "11:50",
+      "likes": 628,
+      "dislikes": 143,
+      "id": 8
+    },
+    {
+      "author": "Michael",
+      "school": "CMS",
+      "body": "Attention CMS students! The music club is hosting a jam session next week. Bring your instruments and showcase your musical talent.",
+      "timestamp": "19:30",
+      "likes": 798,
+      "dislikes": 201,
+      "id": 9
+    },
+    {
+      "author": "Sophia",
+      "school": "CSE",
+      "body": "Looking for a study group for the computer science course. Let's collaborate and excel together!",
+      "timestamp": "10:15",
+      "likes": 523,
+      "dislikes": 92,
+      "id": 10
+    },
+    {
+      "author": "Nathan",
+      "school": "CES",
+      "body": "Attention CES students! The environmental club is organizing a beach cleanup this weekend. Join us to protect our environment.",
+      "timestamp": "15:40",
+      "likes": 738,
+      "dislikes": 167,
+      "id": 11
+    },
+    {
+      "author": "Emma",
+      "school": "CSB",
+      "body": "Attention CSB students! The book club is meeting this Thursday at the library. Come and discuss your favorite books.",
+      "timestamp": "12:15",
+      "likes": 824,
+      "dislikes": 132,
+      "id": 12
+    },
+    {
+      "author": "Benjamin",
+      "school": "CSL",
+      "body": "Join us for a soccer tournament this weekend at the campus field. Form your teams and compete for the championship.",
+      "timestamp": "17:20",
+      "likes": 974,
+      "dislikes": 189,
+      "id": 13
+    },
+    {
+      "author": "Sophie",
+      "school": "CSM",
+      "body": "Looking for a study partner for the biology course. Let's ace the exams together!",
+      "timestamp": "14:10",
+      "likes": 568,
+      "dislikes": 94,
+      "id": 14
+    },
+    {
+      "author": "James",
+      "school": "CST",
+      "body": "Attention CST students! The robotics club is organizing a workshop on building autonomous robots. Join us to learn and build amazing projects.",
+      "timestamp": "16:40",
+      "likes": 742,
+      "dislikes": 173,
+      "id": 15
+    },
+    {
+      "author": "Ava",
+      "school": "CSA",
+      "body": "Attention CSA students! The art club is hosting an exhibition next month. Showcase your artwork and appreciate the talents of your peers.",
+      "timestamp": "13:25",
+      "likes": 823,
+      "dislikes": 152,
+      "id": 16
+    },
+    {
+      "author": "Ethan",
+      "school": "CSG",
+      "body": "Looking for a study group for the chemistry course. Let's tackle the concepts together!",
+      "timestamp": "10:50",
+      "likes": 579,
+      "dislikes": 102,
+      "id": 17
+    },
+    {
+      "author": "Mia",
+      "school": "CSH",
+      "body": "Attention CSH students! The theater club is organizing auditions for the upcoming play. Showcase your acting skills and join the cast.",
+      "timestamp": "15:20",
+      "likes": 694,
+      "dislikes": 138,
+      "id": 18
+    },
+    {
+      "author": "William",
+      "school": "CTS",
+      "body": "Looking for a carpool from campus to downtown. Willing to share gas expenses.",
+      "timestamp": "11:30",
+      "likes": 493,
+      "dislikes": 85,
+      "id": 19
+    },
+    {
+      "author": "Charlotte",
+      "school": "CMS",
+      "body": "Attention CMS students! The choir is looking for new members. Join us to express your love for singing.",
+      "timestamp": "17:10",
+      "likes": 745,
+      "dislikes": 187,
+      "id": 20
+    },
+    {
+      "author": "Henry",
+      "school": "CSE",
+      "body": "Looking for a study partner for the programming course. Let's code and improve our skills together!",
+      "timestamp": "14:55",
+      "likes": 642,
+      "dislikes": 118,
+      "id": 21
+    },
+    {
+      "author": "Grace",
+      "school": "CES",
+      "body": "Attention CES students! The astronomy club is organizing a telescope observation night. Explore the wonders of the universe with us.",
+      "timestamp": "19:50",
+      "likes": 838,
+      "dislikes": 176,
+      "id": 22
+    },
+    {
+      "author": "Oliver",
+      "school": "CSB",
+      "body": "Looking for a study group for the history course. Let's ace the exams together!",
+      "timestamp": "12:45",
+      "likes": 572,
+      "dislikes": 92,
+      "id": 23
+    },
+    {
+      "author": "Sophia",
+      "school": "CSL",
+      "body": "Attention CSL students! The debate club is organizing a debate competition. Showcase your persuasive skills and win exciting prizes.",
+      "timestamp": "15:30",
+      "likes": 772,
+      "dislikes": 154,
+      "id": 24
+    },
+    {
+      "author": "Lucas",
+      "school": "CSM",
+      "body": "Join us for a coding bootcamp next month. Learn the latest technologies and kickstart your career as a developer.",
+      "timestamp": "18:20",
+      "likes": 928,
+      "dislikes": 207,
+      "id": 25
+    },
+    {
+      "author": "Aria",
+      "school": "CST",
+      "body": "Attention CST students! The entrepreneurship club is organizing a workshop on starting a business. Gain valuable insights and network with successful entrepreneurs.",
+      "timestamp": "14:50",
+      "likes": 647,
+      "dislikes": 129,
+      "id": 26
+    },
+    {
+      "author": "Elijah",
+      "school": "CSA",
+      "body": "Looking for a study partner for the psychology course. Let's understand the complexities of the human mind together!",
+      "timestamp": "10:25",
+      "likes": 579,
+      "dislikes": 97,
+      "id": 27
+    },
+    {
+      "author": "Scarlett",
+      "school": "CSG",
+      "body": "Attention CSG students! The biology club is organizing a field trip to the local nature reserve. Explore the biodiversity and learn about ecosystems.",
+      "timestamp": "16:45",
+      "likes": 716,
+      "dislikes": 168,
+      "id": 28
+    },
+    {
+      "author": "Daniel",
+      "school": "CSH",
+      "body": "Join us for a chess tournament this Saturday at the student center. Test your strategic thinking and compete for the title of the campus chess champion.",
+      "timestamp": "12:20",
+      "likes": 928,
+      "dislikes": 193,
+      "id": 29
+    },
+    {
+      "author": "Chloe",
+      "school": "CTS",
+      "body": "Attention CTS students! The physics club is hosting a workshop on quantum mechanics. Dive into the fascinating world of subatomic particles.",
+      "timestamp": "15:55",
+      "likes": 769,
+      "dislikes": 156,
+      "id": 30
+    },
+    {
+      "author": "Henry",
+      "school": "CMS",
+      "body": "Looking for a study group for the music theory course. Let's unravel the secrets of musical harmony!",
+      "timestamp": "11:40",
+      "likes": 548,
+      "dislikes": 103,
+      "id": 31
+    },
+    {
+      "author": "Sophie",
+      "school": "CSE",
+      "body": "Attention CSE students! The hackathon is just around the corner. Form your teams and showcase your coding skills.",
+      "timestamp": "17:25",
+      "likes": 892,
+      "dislikes": 182,
+      "id": 32
+    },
+    {
+      "author": "Nathan",
+      "school": "CES",
+      "body": "Join us for a beach volleyball tournament this Sunday. Form your teams and enjoy some friendly competition.",
+      "timestamp": "12:10",
+      "likes": 694,
+      "dislikes": 156,
+      "id": 33
+    },
+    {
+      "author": "Liam",
+      "school": "CSB",
+      "body": "Looking for a study group for the economics course. Let's understand the principles of supply and demand together!",
+      "timestamp": "16:05",
+      "likes": 527,
+      "dislikes": 89,
+      "id": 34
+    },
+    {
+      "author": "Emily",
+      "school": "CSL",
+      "body": "Attention CSL students! The engineering club is organizing a bridge-building competition. Put your engineering skills to the test.",
+      "timestamp": "10:45",
+      "likes": 746,
+      "dislikes": 128,
+      "id": 35
+    },
+    {
+      "author": "Jacob",
+      "school": "CSM",
+      "body": "Join us for a seminar on machine learning and artificial intelligence. Explore the future of technology with industry experts.",
+      "timestamp": "15:15",
+      "likes": 942,
+      "dislikes": 206,
+      "id": 36
+    },
+    {
+      "author": "Sophia",
+      "school": "CST",
+      "body": "Looking for a study partner for the statistics course. Let's analyze data and excel in the subject together!",
+      "timestamp": "12:40",
+      "likes": 634,
+      "dislikes": 123,
+      "id": 37
+    },
+    {
+      "author": "Ethan",
+      "school": "CSA",
+      "body": "Attention CSA students! The film club is hosting a screening of an award-winning documentary. Explore important social issues through the power of cinema.",
+      "timestamp": "14:55",
+      "likes": 729,
+      "dislikes": 151,
+      "id": 38
+    },
+    {
+      "author": "Isabella",
+      "school": "CSG",
+      "body": "Looking for a study group for the sociology course. Let's analyze society and its structures together!",
+      "timestamp": "10:30",
+      "likes": 587,
+      "dislikes": 97,
+      "id": 39
+    },
+    {
+      "author": "Daniel",
+      "school": "CSH",
+      "body": "Attention CSH students! The drama club is organizing auditions for the upcoming play. Showcase your acting skills and join the cast.",
+      "timestamp": "16:50",
+      "likes": 712,
+      "dislikes": 168,
+      "id": 40
+    },
+    {
+      "author": "Olivia",
+      "school": "CTS",
+      "body": "Join us for a table tennis tournament this Saturday at the student center. Show off your skills and compete for the title of the campus table tennis champion.",
+      "timestamp": "12:30",
+      "likes": 863,
+      "dislikes": 184,
+      "id": 41
+    },
+    {
+      "author": "Noah",
+      "school": "CMS",
+      "body": "Attention CMS students! The dance club is hosting a workshop on contemporary dance. Express yourself through the art of movement.",
+      "timestamp": "15:40",
+      "likes": 789,
+      "dislikes": 171,
+      "id": 42
+    },
+    {
+      "author": "Ava",
+      "school": "CSE",
+      "body": "Looking for a study partner for the algorithms course. Let's solve complex problems and optimize our code together!",
+      "timestamp": "11:25",
+      "likes": 632,
+      "dislikes": 119,
+      "id": 43
+    },
+    {
+      "author": "Henry",
+      "school": "CES",
+      "body": "Attention CES students! The climate change awareness club is organizing a panel discussion on sustainable practices. Join us to learn and discuss environmental issues.",
+      "timestamp": "16:35",
+      "likes": 848,
+      "dislikes": 199,
+      "id": 44
+    },
+    {
+      "author": "Mia",
+      "school": "CSB",
+      "body": "Join us for a hiking trip next weekend. Explore the beautiful trails and enjoy the wonders of nature.",
+      "timestamp": "12:20",
+      "likes": 685,
+      "dislikes": 145,
+      "id": 45
+    },
+    {
+      "author": "Liam",
+      "school": "CSL",
+      "body": "Looking for a study group for the physics course. Let's unravel the laws of the universe together!",
+      "timestamp": "15:55",
+      "likes": 762,
+      "dislikes": 152,
+      "id": 46
+    },
+    {
+      "author": "Ava",
+      "school": "CSM",
+      "body": "Attention CSM students! The computer club is organizing a workshop on cybersecurity. Learn how to protect yourself in the digital world.",
+      "timestamp": "10:40",
+      "likes": 729,
+      "dislikes": 158,
+      "id": 47
+    },
+    {
+      "author": "William",
+      "school": "CST",
+      "body": "Looking for a study partner for the finance course. Let's understand the intricacies of money and investments together!",
+      "timestamp": "14:15",
+      "likes": 642,
+      "dislikes": 127,
+      "id": 48
+    },
+    {
+      "author": "Sophia",
+      "school": "CSA",
+      "body": "Attention CSA students! The fashion club is hosting a fashion show. Showcase your style and creativity on the runway.",
+      "timestamp": "16:30",
+      "likes": 778,
+      "dislikes": 159,
+      "id": 49
+    },
+    {
+      "author": "Ethan",
+      "school": "CSG",
+      "body": "Looking for a study group for the anthropology course. Let's explore the diversity of human cultures together!",
+      "timestamp": "12:25",
+      "likes": 614,
+      "dislikes": 107,
+      "id": 50
+    }
+  ]   
+}

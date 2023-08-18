@@ -1,0 +1,15 @@
+{
+    "labels":{
+        "email": "EMAIL",
+        "username": "USERNAME",
+        "password": "password",
+        "repeat-password": "REPEAT PASSWORD",
+        "choose-school": "CHOOSE YOUR SCHOOL"
+    },
+
+    "buttons":{
+        "forgot-pass": "FORGOT PASSWORD?",
+        "log-in": "LOG IN",
+        "register": "REGISTER"
+    }
+}

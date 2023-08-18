@@ -1,0 +1,17 @@
+{
+    
+    "labels":{
+        "email": "ელფოსტა",
+        "username": "იუზერნეიმი",
+        "password": "პაროლი",
+        "repeat-password": "გაიმეორეთ პაროლი",
+        "choose-school": "აირჩიეთ თქვენი სკოლა"
+    },
+
+    "buttons":{
+        "forgot-pass": "დაგავიწყდათ პაროლი?",
+        "log-in": "ავტორიზაცია",
+        "register": "რეგისტრაცია"
+    }
+    
+}

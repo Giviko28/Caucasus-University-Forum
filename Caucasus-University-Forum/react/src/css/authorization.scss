@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+@import 'mixins-authreg';
+
+$white: #FFFFFF;
+$green: #A9EF9A;
+$black: #000000;
+$gray: #7C7C7C;
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+.authreg-body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.authorization-form {
+    @include forms(360px);
+
+    input {
+        @include inputs;
+        
+        &:first-of-type {
+            margin-bottom: 15px;
+        }
+    }
+
+    .login-btn {
+        @include buttons;
+    }
+
+    .forgot-pass-btn {
+        background: none;
+        border: none;
+        width: auto;
+        height: auto;
+        align-self: flex-start;
+        margin-left: 8px;
+        margin-top: -15px;
+        font-size: 18px;
+        color: $gray;
+        letter-spacing: 0.025rem;
+
+        &:hover {
+            color: $green;
+        }
+    }
+
+    .to-register-btn {
+        background: none;
+        border: none;
+        text-decoration: none;
+        width: auto;
+        height: auto;
+        align-self: flex-start;
+        margin-top: -20px;
+        font-size: 24px;
+        color: $gray;
+        letter-spacing: 0.025rem;
+        
+        &:hover {
+            color: $green;
+        }
+    }
+}
+
+

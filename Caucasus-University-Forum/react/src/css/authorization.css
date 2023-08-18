@@ -1,0 +1,99 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+.authreg-body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.authorization-form {
+  width: 475px;
+  height: 360px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.authorization-form label {
+  color: #7C7C7C;
+  align-self: flex-start;
+  margin-left: 8px;
+  margin-bottom: -25px;
+  font-size: 24px;
+  letter-spacing: 0.26rem;
+}
+.authorization-form input {
+  border: none;
+  border-bottom: solid 3px #000000;
+  background: none;
+  width: 450px;
+  height: 30px;
+  color: #000000;
+  font-size: 18px;
+  letter-spacing: 0.15rem;
+  padding: 5px;
+}
+.authorization-form input:focus {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  outline: none;
+  border-bottom: solid 3px #A9EF9A;
+  transition: 0.3s ease;
+}
+.authorization-form input:first-of-type {
+  margin-bottom: 15px;
+}
+.authorization-form .login-btn {
+  text-align: center;
+  font-size: 30px;
+  color: #000000;
+  width: 472px;
+  height: 63px;
+  background-color: #A9EF9A;
+  border: none;
+  cursor: pointer;
+}
+.authorization-form .login-btn:hover {
+  background-color: #DCEAD9;
+  color: #7C7C7C;
+}
+.authorization-form .login-btn:active {
+  transform: scale(0.95);
+}
+.authorization-form .forgot-pass-btn {
+  background: none;
+  border: none;
+  width: auto;
+  height: auto;
+  align-self: flex-start;
+  margin-left: 8px;
+  margin-top: -15px;
+  font-size: 18px;
+  color: #7C7C7C;
+  letter-spacing: 0.025rem;
+}
+.authorization-form .forgot-pass-btn:hover {
+  color: #A9EF9A;
+}
+.authorization-form .to-register-btn {
+  background: none;
+  border: none;
+  text-decoration: none;
+  width: auto;
+  height: auto;
+  align-self: flex-start;
+  margin-top: -20px;
+  font-size: 24px;
+  color: #7C7C7C;
+  letter-spacing: 0.025rem;
+}
+.authorization-form .to-register-btn:hover {
+  color: #A9EF9A;
+}/*# sourceMappingURL=authorization.css.map */

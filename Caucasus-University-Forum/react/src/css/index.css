@@ -1,0 +1,145 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+.home-body {
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+}
+
+.main {
+  width: 1000px;
+  height: 100%;
+  display: grid;
+  grid-template-rows: 1fr 3fr;
+  grid-template-columns: 1fr 3fr;
+  grid-gap: 1em;
+  justify-items: center;
+  align-items: center;
+}
+.main .profile-icon {
+  grid-row: 1;
+  grid-column: 1;
+  height: 140px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+.main .profile-icon img {
+  width: 100px;
+  height: 100px;
+  cursor: pointer;
+}
+.main .profile-icon img:active {
+  transform: scale(0.95);
+}
+.main .profile-icon h2 {
+  margin-top: -20px;
+  cursor: pointer;
+  transition: 0.3s linear;
+}
+.main .profile-icon h2:hover {
+  color: #7C7C7C;
+}
+.main .profile-icon h2:active {
+  transform: scale(0.95);
+}
+.main .navigation-bar {
+  grid-row: 1;
+  grid-column: 2;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 800px;
+}
+.main .navigation-bar button {
+  border: none;
+  background: none;
+  font-size: 25px;
+  cursor: pointer;
+  transition: 0.3s linear;
+}
+.main .navigation-bar button:hover {
+  color: #7C7C7C;
+}
+.main .navigation-bar button:active {
+  transform: scale(0.95);
+}
+.main .navigation-bar .login {
+  background-color: #A9EF9A;
+  border-radius: 30px;
+  width: 100px;
+  height: 50px;
+}
+.main .navigation-bar .login:hover {
+  background-color: #DCEAD9;
+  color: #000000;
+}
+.main .navigation-bar .login:active {
+  transform: scale(0.95);
+}
+.main .navigation-bar input {
+  background-color: #F2F2F2;
+  border: none;
+  border-radius: 40px;
+  padding-left: 20px;
+  width: 250px;
+  height: 50px;
+  font-size: 20px;
+}
+.main .navigation-bar input::-moz-placeholder {
+  color: #000000;
+  opacity: 40%;
+}
+.main .navigation-bar input::placeholder {
+  color: #000000;
+  opacity: 40%;
+}
+.main .navigation-bar input:focus {
+  outline: solid 2px #000000;
+}
+.main .filter-list {
+  grid-row: 2;
+  grid-column: 1;
+  align-self: start;
+  margin-top: 10px;
+  height: 650px;
+  width: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.main .filter-list button {
+  width: 120px;
+  height: 40px;
+  border: none;
+  background-color: #F2F2F2;
+  border-radius: 30px;
+  font-size: 22px;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.3s linear;
+}
+.main .filter-list button:hover {
+  background-color: #A9EF9A;
+  color: #000000;
+}
+.main .filter-list button:active {
+  transform: scale(0.95);
+}
+.main .filter-list button:focus {
+  background-color: #A9EF9A;
+}
+.main .timeline {
+  grid-row: 2;
+  grid-column: 2;
+  align-self: start;
+}/*# sourceMappingURL=index.css.map */
