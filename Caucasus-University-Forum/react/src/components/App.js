@@ -2,9 +2,11 @@ import { BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import Home from './Home';
 import Authorization from './Authorization';
 import Registration from './Registration';
+import {ContextProvider} from "../contexts/StateContext";
 
 function App() {
     return (
+        <ContextProvider>
         <Router>
             <Switch>
                 <Route exact path="/">
@@ -18,6 +20,7 @@ function App() {
                 </Route>
             </Switch>
         </Router>
+        </ContextProvider>
     )
 }
 

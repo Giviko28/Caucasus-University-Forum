@@ -1,14 +1,24 @@
 import { useTranslation } from 'react-i18next';
 import '../css/authorization.css';
-import { Link } from 'react-router-dom';
+import {Link, Redirect} from 'react-router-dom';
 import { useEffect } from 'react';
+import {useStateContext} from "../contexts/StateContext";
 
 const Authorization = () => {
+
     const [t, i18n] = useTranslation('authreg');
 
     useEffect(() => {
         document.body.className = 'authreg-body';
     }, []);
+
+    const {user, token} = useStateContext();
+
+    if (token) {
+        return <Redirect to='/'/>
+    }
+
+
 
     // const changeLanguage = (lang) => {
     //     i18n.changeLanguage(lang);
@@ -27,7 +37,7 @@ const Authorization = () => {
             </form>
             {/* <div className="buttons">
                 <button onClick={() => changeLanguage('ge')}>ქართული</button>
-                <button onClick={() => changeLanguage('en')}>english</button> 
+                <button onClick={() => changeLanguage('en')}>english</button>
             </div> */}
         </div>
     );

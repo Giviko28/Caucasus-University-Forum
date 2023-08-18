@@ -1,6 +1,8 @@
 import { useTranslation } from 'react-i18next';
 import { useEffect } from 'react';
 import '../css/registration.css';
+import {useStateContext} from "../contexts/StateContext";
+import {Redirect} from "react-router-dom";
 
 const Registration = () => {
     const [t, i18n] = useTranslation('authreg');
@@ -8,6 +10,12 @@ const Registration = () => {
     useEffect(() => {
         document.body.className = 'authreg-body';
     }, []);
+
+    const {user, token} = useStateContext();
+
+    if (token) {
+        return <Redirect to='/'/>
+    }
 
     return (
         <div>
