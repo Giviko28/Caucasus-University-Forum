@@ -33,7 +33,7 @@ const Authorization = () => {
                 setUser(data.user);
                 setToken(data.token);
                 setDisplayError('none');
-                setErrorMessage('');
+                setErrorMessage(''); 
                 setInputErrors({
                     email: false,
                     password: false,
@@ -41,18 +41,16 @@ const Authorization = () => {
             })
             .catch(error => {
                 const errorProps = error.response.data;
-                console.log(error);
-                console.log(errorProps.message)
                 setDisplayError('block');
-                setErrorMessage(errorProps.message);
+                setErrorMessage(errorProps.message);  
                 if(errorProps.errors) {
                     setInputErrors({
-                        email: !!errorProps.errors.email,
+                        email: !!errorProps.errors.email,  
                         password: !!errorProps.errors.password,
                     });
                 } else {
                     setInputErrors({
-                        password: errorProps.message
+                        password: true 
                     })
                 }
                 console.log(error);
@@ -69,10 +67,18 @@ const Authorization = () => {
         <div>
             <div style={{ display: displayError, color: 'red'}}>{ errorMessage }</div>
             <form onSubmit={onSubmit} className='authorization-form'>
-                <label>{t('labels.email')}</label><br />
-                <input ref={emailRef} type="email" style={inputErrors.email? {borderColor: 'red'}: {}} /><br />
-                <label>{t('labels.password')}</label><br />
-                <input ref={passwordRef} type="password" style={inputErrors.password? {borderColor: 'red'}: {}} /><br />
+                <label style={
+                    inputErrors.email? {color: 'red'}: {}
+                }>{t('labels.email')}</label><br />
+                <input ref={emailRef} type="email" style={
+                    inputErrors.email? {borderColor: 'red', color: 'red'}: {}
+                } /><br />
+                <label style={
+                    inputErrors.password? {color: 'red'}: {}
+                }>{t('labels.password')}</label><br />
+                <input ref={passwordRef} type="password" style={
+                    inputErrors.password? {borderColor: 'red', color: 'red'}: {}
+                } /><br />
                 <button className='forgot-pass-btn'>{ t('buttons.forgot-pass') }</button><br />
                 <button className='login-btn'>{ t('buttons.log-in') }</button><br />
                 <Link to="/registration" className="to-register-btn">{ t('buttons.register') }</Link>
