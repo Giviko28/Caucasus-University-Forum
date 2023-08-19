@@ -1,31 +1,43 @@
 import { useState, useEffect} from 'react';
+import axiosClient from "../components/axios-client";
 
-const useFetch = (url) => {
+const useFetch = () => {
     const [data, setData] = useState(null);
     const [isPending, setIsPending] = useState(true);
     const [error, setError] = useState(null);
 
-
     useEffect(() => {
-        fetch(url)
-            .then(res => {
-                if(!res.ok){
-                    throw Error('Could not fetch the data');
-                }
-                return res.json();
-            })
-            .then(data => {
-                setData(data);
+        axiosClient.get('/posts')
+            .then(response => {
+                setData(response.data);
                 setIsPending(false);
             })
-            .catch(err => {
+            .catch(error => {
+                setError(error.message);
                 setIsPending(false);
-                setError(err.message);
             })
-    }, [url]);
+    }, []);
+
+    // useEffect(() => {
+    //     fetch(url)
+    //         .then(res => {
+    //             if(!res.ok){
+    //                 throw Error('Could not fetch the data');
+    //             }
+    //             return res.json();
+    //         })
+    //         .then(data => {
+    //             setData(data);
+    //             setIsPending(false);
+    //         })
+    //         .catch(err => {
+    //             setIsPending(false);
+    //             setError(err.message);
+    //         })
+    // }, [url]);
 
 
     return { data, isPending, error };
 }
- 
+
 export default useFetch;

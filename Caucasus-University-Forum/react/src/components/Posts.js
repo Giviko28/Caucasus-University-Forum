@@ -4,15 +4,15 @@ import LikeIcon from '../svg/like.svg';
 import DislikeIcon from '../svg/dislike.svg';
 
 const Posts = ({posts}) => {
-    
-    return (  
+
+    return (
         <div>
             {posts.map((post) => (
                 <div className="post" key={post.id}>
                     <img src={ProfilePhoto} alt="profile photo not available" className="profile-photo" />
                     <div className="user-name">
-                        <h3>{post.author}</h3>
-                        <h5>{post.school}</h5>
+                        <h3>{post.user_id}</h3>
+                        <h5>{post.category_id}</h5>
                     </div>
                     <p>{post.body}</p>
                     <div className="post-details">
@@ -39,5 +39,5 @@ const Posts = ({posts}) => {
         </div>
     );
 }
- 
+
 export default Posts;

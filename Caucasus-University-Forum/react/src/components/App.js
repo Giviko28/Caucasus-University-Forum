@@ -3,6 +3,7 @@ import Home from './Home';
 import Authorization from './Authorization';
 import Registration from './Registration';
 import {ContextProvider} from "../contexts/StateContext";
+import {Logout} from "./Logout";
 
 function App() {
     return (
@@ -17,6 +18,9 @@ function App() {
                 </Route>
                 <Route exact path="/registration">
                     <Registration />
+                </Route>
+                <Route exact path='/logout'>
+                    <Logout />
                 </Route>
                 <Route exact path='*'>
                     <Redirect to='/' />
