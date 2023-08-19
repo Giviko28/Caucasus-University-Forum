@@ -10,6 +10,7 @@ const useFetch = () => {
         axiosClient.get('/posts')
             .then(response => {
                 setData(response.data);
+                console.log(response);
                 setIsPending(false);
             })
             .catch(error => {

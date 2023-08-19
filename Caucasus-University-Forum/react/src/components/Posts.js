@@ -11,12 +11,12 @@ const Posts = ({posts}) => {
                 <div className="post" key={post.id}>
                     <img src={ProfilePhoto} alt="profile photo not available" className="profile-photo" />
                     <div className="user-name">
-                        <h3>{post.user_id}</h3>
-                        <h5>{post.category_id}</h5>
+                        <h3>{post.author.name}</h3>
+                        <h5>{post.category.name}</h5>
                     </div>
                     <p>{post.body}</p>
                     <div className="post-details">
-                        <h5>{post.timestamp}</h5>
+                        <h5>{post.timestamps}</h5>
                         <div className="vl"></div>
                         <h4>Comments</h4>
                     </div>
