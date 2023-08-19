@@ -4,15 +4,14 @@ import axiosClient from "./axios-client";
 
 
 export const Logout = () => {
-    const {setUser, token} = useStateContext();
+    const {setUser, setToken, token} = useStateContext();
     if (!token) {
         return <Redirect to='/authorization' />
     } else {
         axiosClient.get('/logout')
             .then(response => {
-                localStorage.removeItem('ACCESS_TOKEN');
                 setUser(null);
-                console.log(response.data);
+                setToken(localStorage.getItem("ACCESS_TOKEN"));
             })
             .catch(error => {
                 console.log(error);

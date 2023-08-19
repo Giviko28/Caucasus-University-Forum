@@ -38,12 +38,14 @@ class AuthController extends Controller
                 'required',
                 'confirmed',
                 'min:8'
-            ]
+            ],
+            'category' => ['required', 'exists:categories,id']
         ]);
         $user = User::create([
             'name' => $credentials['name'],
             'email' => $credentials['email'],
-            'password' => bcrypt($credentials['password'])
+            'password' => bcrypt($credentials['password']),
+            'category_id' => $credentials['category']
         ]);
         $token = $user->createToken('main')->plainTextToken;
 

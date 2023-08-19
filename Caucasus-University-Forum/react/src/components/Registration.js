@@ -10,6 +10,7 @@ const Registration = () => {
     const emailRef = useRef();
     const passwordRef = useRef();
     const passwordConfirmationRef = useRef();
+    const categoryRef = useRef();
 
     const [t, i18n] = useTranslation('authreg');
 
@@ -30,7 +31,8 @@ const Registration = () => {
             name: nameRef.current.value,
             email: emailRef.current.value,
             password: passwordRef.current.value,
-            password_confirmation: passwordConfirmationRef.current.value
+            password_confirmation: passwordConfirmationRef.current.value,
+            category: categoryRef.current.value
         }
         axiosClient.post('/signup', payload)
             .then(response => {
@@ -57,17 +59,17 @@ const Registration = () => {
                 <input ref={passwordRef} type="password" /><br />
                 <label>{t('labels.repeat-password')}</label><br />
                 <input ref={passwordConfirmationRef} type="password" /><br />
-                <select>
+                <select ref={categoryRef}>
                     <option>{t('labels.choose-school')}</option>
-                    <option>CSB</option>
-                    <option>CSL</option>
-                    <option>CST</option>
-                    <option>CSA</option>
-                    <option>CSH</option>
-                    <option>CTS</option>
-                    <option>CSM</option>
-                    <option>CTE</option>
-                    <option>CES</option>
+                    <option value={1}>CSB</option>
+                    <option value={2}>CSL</option>
+                    <option value={3}>CST</option>
+                    <option value={4}>CSA</option>
+                    <option value={5}>CSH</option>
+                    <option value={6}>CTS</option>
+                    <option value={7}>CSM</option>
+                    <option value={8}>CTE</option>
+                    <option value={9}>CES</option>
                 </select><br />
                 <button className="register-btn">{t('buttons.register')}</button>
             </form>
