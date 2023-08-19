@@ -15,14 +15,14 @@ const Home = () => {
         setFilterSchool(school);
     }
 
-    return (  
+    return (
         <div className="main">
             <Profile />
-            <Navbar />
+            <Navbar handleFilter={handleFilter} />
             <FilterList handleFilter={handleFilter} />
             <Timeline filter={filterSchool} />
         </div>
     );
 }
- 
+
 export default Home;

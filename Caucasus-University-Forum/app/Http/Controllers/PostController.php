@@ -9,6 +9,6 @@ class PostController extends Controller
 {
     public function show()
     {
-        return Post::query()->latest()->get();
+        return Post::query()->latest()->filter(request(['category']))->get();
     }
 }

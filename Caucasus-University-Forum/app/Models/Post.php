@@ -10,6 +10,12 @@ class Post extends Model
     use HasFactory;
     protected $with = ['author', 'category'];
 
+    public function scopeFilter($query, $filters)
+    {
+        if ($filters['category']) {
+            $query->where('category_id', $filters['category']);
+        }
+    }
     public function author()
     {
         return $this->belongsTo(User::class, 'user_id');

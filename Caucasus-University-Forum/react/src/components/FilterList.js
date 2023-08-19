@@ -11,9 +11,9 @@ const FilterList = ({handleFilter}) => {
     return (
     <div className="filter-list">
         {schools && schools.map((school) => (
-            <a href={`/?category=${school.name}`} style={{
+            <button href={`/?category=${school.name}`} style={{
                 marginTop: '5px'
-            }} onClick={() => handleFilter(school.name)} key={school.id}>{school.name}</a>
+            }} onClick={() => handleFilter(school.id)} key={school.id}>{school.name}</button>
         ))}
     </div>
   );
