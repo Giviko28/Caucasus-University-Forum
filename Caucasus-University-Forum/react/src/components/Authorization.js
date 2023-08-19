@@ -41,13 +41,20 @@ const Authorization = () => {
             })
             .catch(error => {
                 const errorProps = error.response.data;
-                console.log('test');
+                console.log(error);
+                console.log(errorProps.message)
                 setDisplayError('block');
                 setErrorMessage(errorProps.message);
-                setInputErrors({
-                    email: !!errorProps.errors.email, 
-                    password: !!errorProps.errors.password, 
-                });
+                if(errorProps.errors) {
+                    setInputErrors({
+                        email: !!errorProps.errors.email,
+                        password: !!errorProps.errors.password,
+                    });
+                } else {
+                    setInputErrors({
+                        password: errorProps.message
+                    })
+                }
                 console.log(error);
             })
     }
