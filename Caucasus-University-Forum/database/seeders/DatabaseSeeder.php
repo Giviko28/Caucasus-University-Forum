@@ -16,7 +16,13 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        Category::factory(11)->create();
+        $schools = ['CSB', 'CSL', 'CSM', 'CST', 'CSA', 'CSG', 'CSH', 'CTS', 'CMS', 'CSE', 'CES'];
+        foreach($schools as $index => $school) {
+            Category::factory()->create([
+                'name' => $school,
+                'id' => $index+1
+            ]);
+        }
         Post::factory(10)->create();
     }
 }

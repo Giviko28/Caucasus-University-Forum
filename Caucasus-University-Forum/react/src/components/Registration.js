@@ -4,9 +4,14 @@ import '../css/registration.css';
 import {useStateContext} from "../contexts/StateContext";
 import {Redirect} from "react-router-dom";
 import axiosClient from "./axios-client";
+import {getCategories} from "../hooks/getCategories";
 
 const Registration = () => {
     const [t, i18n] = useTranslation('authreg');
+    const [schools, setSchools] = useState(null);
+    useEffect(() => {
+        getCategories(setSchools);
+    }, []);
     const {setUser, setToken, token} = useStateContext();
     const nameRef = useRef();
     const emailRef = useRef();
@@ -44,7 +49,7 @@ const Registration = () => {
                 setUser(data.user);
                 setToken(data.token);
                 setDisplayError('none');
-                setErrorMessage(''); 
+                setErrorMessage('');
                 setInputErrors({
                     email: false,
                     name: false,
@@ -57,11 +62,11 @@ const Registration = () => {
                 if (response && response.status === 422) {
                     const errorProps = error.response.data;
                     setDisplayError('block');
-                    setErrorMessage(errorProps.message);   
+                    setErrorMessage(errorProps.message);
                     setInputErrors({
                         email: !!errorProps.errors.email,
-                        name: !!errorProps.errors.name,   
-                        password: !!errorProps.errors.password, 
+                        name: !!errorProps.errors.name,
+                        password: !!errorProps.errors.password,
                         category: !!errorProps.errors.category,
                     });
                     console.log(response.data.errors);
@@ -101,15 +106,9 @@ const Registration = () => {
                     inputErrors.category? {color: 'red', borderColor: 'red'}: {}
                 }>
                     <option>{t('labels.choose-school')}</option>
-                    <option value={1}>CSB</option>
-                    <option value={2}>CSL</option>
-                    <option value={3}>CST</option>
-                    <option value={4}>CSA</option>
-                    <option value={5}>CSH</option>
-                    <option value={6}>CTS</option>
-                    <option value={7}>CSM</option>
-                    <option value={8}>CTE</option>
-                    <option value={9}>CES</option>
+                    {schools && schools.map((school) => (
+                        <option value={school.id}>{school.name}</option>
+                    ))}
                 </select><br />
                 <button className="register-btn">{t('buttons.register')}</button>
             </form>

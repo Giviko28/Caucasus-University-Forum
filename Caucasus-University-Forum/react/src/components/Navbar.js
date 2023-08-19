@@ -8,7 +8,7 @@ const Navbar = () => {
     const {token} = useStateContext();
     return (
         <nav className="navigation-bar">
-            <button>{t('home')}</button>
+            <a>{t('home')}</a>
             <button>{t('clubs')}</button>
             {!token ? (<Link to="/authorization"><button className="login">{t('login')}</button></Link>) : (<Link to="/logout"><button className="login">{t('Log out')}</button></Link>)}
             <input type="text" placeholder={t('search')} />

@@ -1,12 +1,19 @@
+import {useEffect, useState} from "react";
+import axiosClient from "./axios-client";
+import {getCategories} from "../hooks/getCategories";
 
 const FilterList = ({handleFilter}) => {
-    const schools = ['CSB', 'CSL', 'CSM', 'CST', 'CSA', 'CSG', 'CSH', 'CTS', 'CMS', 'CSE', 'CES'];
+    const [schools, setSchools] = useState(null)
+    useEffect(() => {
+       getCategories(setSchools);
+    }, []);
+
     return (
     <div className="filter-list">
-        {schools.map((school, index) => (
-            <button style={{
+        {schools && schools.map((school) => (
+            <a href={`/?category=${school.name}`} style={{
                 marginTop: '5px'
-            }} onClick={() => handleFilter({school})} key={index+1}>{school}</button>
+            }} onClick={() => handleFilter(school.name)} key={school.id}>{school.name}</a>
         ))}
     </div>
   );
