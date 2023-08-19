@@ -16,7 +16,7 @@ const Posts = ({posts}) => {
                     </div>
                     <p>{post.body}</p>
                     <div className="post-details">
-                        <h5>{post.timestamps}</h5>
+                        <h5>{post.created_at}</h5>
                         <div className="vl"></div>
                         <h4>Comments</h4>
                     </div>

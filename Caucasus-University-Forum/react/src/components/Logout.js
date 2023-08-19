@@ -7,14 +7,14 @@ export const Logout = () => {
     const {setUser, setToken, token} = useStateContext();
     if (!token) {
         return <Redirect to='/authorization' />
-    } else {
-        axiosClient.get('/logout')
-            .then(response => {
-                setUser(null);
-                setToken(localStorage.getItem("ACCESS_TOKEN"));
-            })
-            .catch(error => {
-                console.log(error);
-            })
     }
+    axiosClient.get('/logout')
+        .then(response => {
+            setUser(null);
+            setToken(localStorage.getItem("ACCESS_TOKEN"));
+            return <Redirect to='/authorization' />
+        })
+        .catch(error => {
+            console.log(error);
+        })
 }
