@@ -11,7 +11,7 @@ const Authorization = () => {
     const emailRef = useRef();
     const passwordRef = useRef();
     const [displayError, setDisplayError] = useState('none');
-    const [errorMessage, setErrorMessage] = useState(null);
+    const [errorMessage, setErrorMessage] = useState('');
     const [inputErrors, setInputErrors] = useState({
         email: false,
         password: false
@@ -33,7 +33,7 @@ const Authorization = () => {
                 setUser(data.user);
                 setToken(data.token);
                 setDisplayError('none');
-                setErrorMessage(null);
+                setErrorMessage('');
                 setInputErrors({
                     email: false,
                     password: false,
