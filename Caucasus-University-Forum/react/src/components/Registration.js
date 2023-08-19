@@ -11,7 +11,6 @@ const Registration = () => {
     const passwordRef = useRef();
     const passwordConfirmationRef = useRef();
     const categoryRef = useRef();
-
     const [t, i18n] = useTranslation('authreg');
 
     useEffect(() => {
