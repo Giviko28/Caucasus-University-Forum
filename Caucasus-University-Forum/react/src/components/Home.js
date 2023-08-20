@@ -9,16 +9,8 @@ import {useStateContext} from "../contexts/StateContext";
 
 const Home = () => {
     const [filterSchool, setFilterSchool] = useState(null);
-    const {token, setUser} = useStateContext();
     useEffect(() => {
         document.body.className = 'home-body';
-
-        if(token){
-            axiosClient.get('/user')
-                .then(response => {
-                    setUser(response.data);
-                })
-        }
     }, []);
 
     const handleFilter = (school) => {
