@@ -13,8 +13,9 @@ const Posts = ({posts}) => {
         const payload = {id: id}
         axiosClient.post('/post/delete', payload)
             .then(response => {
-                if (response.data.status === 200) {
-                    alert('Post deleted succesfully');
+                console.log(response);
+                if (response.status === 200) {
+                    alert('Post deleted successfully');
                 }
             })
             .catch(error => {
