@@ -3,8 +3,11 @@ import Posts from './Posts';
 import useFetch from '../hooks/useFetch';
 import LoadingPosts from "./loading-components/LoadingPosts";
 
-const Timeline = ({filter}) => {
-    const { data: posts, isPending, error } = useFetch('/posts');
+const Timeline = ({filterSchool}) => {
+    const payload = {
+        category: filterSchool
+    };
+    const { data: posts, isPending, error } = useFetch('/posts', payload);
 
     // const filteredPosts = posts && filter ? posts.filter(post => post.school === filter) : posts;
 

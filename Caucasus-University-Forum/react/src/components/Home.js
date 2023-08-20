@@ -30,7 +30,7 @@ const Home = () => {
             <Profile />
             <Navbar handleFilter={handleFilter} />
             <FilterList handleFilter={handleFilter} />
-            <Timeline filter={filterSchool} />
+            <Timeline filterSchool={filterSchool} />
         </div>
     );
 }
