@@ -91,10 +91,10 @@ $light-gray: #F2F2F2;
             }
         }
 
-        .login {
+        @mixin login-out($width){
             background-color: $green;
             border-radius: 30px;
-            width: 100px;
+            width: $width;
             height: 50px;
 
             &:hover {
@@ -105,6 +105,14 @@ $light-gray: #F2F2F2;
             &:active {
                 transform: scale(0.95);
             }
+        }
+
+        .login {
+            @include login-out(100px);
+        }
+
+        .logout{
+            @include login-out(120px);
         }
 
         input {
@@ -131,7 +139,6 @@ $light-gray: #F2F2F2;
         grid-row: 2;
         grid-column: 1;
         align-self: start;
-        margin-top: 10px;
         height: 650px;
         width: 150px;
         display: flex;
@@ -141,9 +148,10 @@ $light-gray: #F2F2F2;
 
 
 
-        button, a {
+        button {
             width: 120px;
             height: 40px;
+            margin-top: 5px;
             border: none;
             background-color: $light-gray;
             border-radius: 30px;

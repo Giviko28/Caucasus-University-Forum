@@ -7,7 +7,7 @@ import axiosClient from "./axios-client";
 import useFetch from '../hooks/useFetch';
 
 const Registration = () => {
-    const [t, i18n] = useTranslation('authreg');
+    const [t] = useTranslation('authreg');
     const { data: schools, isPending, error } = useFetch('/categories');
     const {setUser, setToken, token} = useStateContext();
     const nameRef = useRef();

@@ -85,6 +85,19 @@
 .main .navigation-bar .login:active {
   transform: scale(0.95);
 }
+.main .navigation-bar .logout {
+  background-color: #A9EF9A;
+  border-radius: 30px;
+  width: 120px;
+  height: 50px;
+}
+.main .navigation-bar .logout:hover {
+  background-color: #DCEAD9;
+  color: #000000;
+}
+.main .navigation-bar .logout:active {
+  transform: scale(0.95);
+}
 .main .navigation-bar input {
   background-color: #F2F2F2;
   border: none;
@@ -109,7 +122,6 @@
   grid-row: 2;
   grid-column: 1;
   align-self: start;
-  margin-top: 10px;
   height: 650px;
   width: 150px;
   display: flex;
@@ -117,9 +129,10 @@
   align-items: center;
   justify-content: space-evenly;
 }
-.main .filter-list button, .main .filter-list a {
+.main .filter-list button {
   width: 120px;
   height: 40px;
+  margin-top: 5px;
   border: none;
   background-color: #F2F2F2;
   border-radius: 30px;
@@ -128,14 +141,14 @@
   cursor: pointer;
   transition: 0.3s linear;
 }
-.main .filter-list button:hover, .main .filter-list a:hover {
+.main .filter-list button:hover {
   background-color: #A9EF9A;
   color: #000000;
 }
-.main .filter-list button:active, .main .filter-list a:active {
+.main .filter-list button:active {
   transform: scale(0.95);
 }
-.main .filter-list button:focus, .main .filter-list a:focus {
+.main .filter-list button:focus {
   background-color: #A9EF9A;
 }
 .main .timeline {
