@@ -8,7 +8,7 @@ const Navbar = ({handleFilter}) => {
     const [t, i18n] = useTranslation('navbar');
     const {user, setUser, setToken} = useStateContext();
 
-    const onClick = (ev) => {
+    const logOut = (ev) => {
         ev.preventDefault();
         axiosClient.post('/logout')
             .then(() => {
@@ -26,7 +26,7 @@ const Navbar = ({handleFilter}) => {
         <nav className="navigation-bar">
             <button onClick={() => handleFilter(null)}>{t('home')}</button>
             <button>{t('clubs')}</button>
-            {!user ? (<Link to="/authorization"><button className="login">{t('login')}</button></Link>) : (<Link to="/authorization"><button onClick={onClick} className="logout">{t('Log out')}</button></Link>)}
+            {!user ? (<Link to="/authorization"><button className="login">{t('login')}</button></Link>) : (<Link to="/authorization"><button onClick={logOut} className="logout">{t('Log out')}</button></Link>)}
             <input type="text" placeholder={t('search')} />
         </nav>
     );

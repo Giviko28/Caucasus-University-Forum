@@ -3,7 +3,6 @@ import Home from './Home';
 import Authorization from './Authorization';
 import Registration from './Registration';
 import {ContextProvider} from "../contexts/StateContext";
-import {Logout} from "./Logout";
 
 function App() {
     return (

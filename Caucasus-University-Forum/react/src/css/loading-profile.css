@@ -1,0 +1,31 @@
+@keyframes loading-animation {
+  0% {
+    background-color: #F2F2F2;
+  }
+  100% {
+    background-color: lightgray;
+  }
+}
+.loading-profile-icon {
+  grid-row: 1;
+  grid-column: 1;
+  display: grid;
+  grid-template-rows: auto auto;
+  gap: 10px;
+  justify-items: center;
+  align-items: center;
+  margin-top: 30px;
+}
+.loading-profile-icon .loading-profile-photo {
+  animation: loading-animation 1s linear infinite alternate;
+  grid-row: 1;
+  width: 100px;
+  height: 100px;
+}
+.loading-profile-icon .loading-user-name {
+  animation: loading-animation 1s linear infinite alternate;
+  grid-row: 2;
+  height: 25px;
+  width: 110px;
+  border-radius: 5px;
+}/*# sourceMappingURL=loading-profile.css.map */

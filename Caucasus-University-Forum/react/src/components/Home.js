@@ -4,11 +4,13 @@ import Profile from './Profile';
 import Navbar from  './Navbar';
 import FilterList from  './FilterList';
 import Timeline from './Timeline';
-import axiosClient from "./axios-client";
 import {useStateContext} from "../contexts/StateContext";
+import LoadingProfile from './loading-components/LoadingProfile';
 
 const Home = () => {
+    const {user, isPending} = useStateContext();
     const [filterSchool, setFilterSchool] = useState(null);
+
     useEffect(() => {
         document.body.className = 'home-body';
     }, []);
@@ -19,7 +21,8 @@ const Home = () => {
 
     return (
         <div className="main">
-            <Profile />
+            {isPending && <LoadingProfile />}
+            {!isPending && <Profile user={user} />}
             <Navbar handleFilter={handleFilter} />
             <FilterList handleFilter={handleFilter} />
             <Timeline filterSchool={filterSchool} />

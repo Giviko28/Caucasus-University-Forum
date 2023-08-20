@@ -5,9 +5,10 @@ import AddImage from '../svg/add-image.svg';
 import {useStateContext} from "../contexts/StateContext";
 import {useRef} from "react";
 import axiosClient from "./axios-client";
+import LoadingWritePost from './loading-components/LoadingWritePost';
 
 const WritePost = () => {
-    const {user} = useStateContext();
+    const {user, isPending} = useStateContext();
     const bodyRef = useRef();
     const onClick = (ev) => {
         ev.preventDefault();
@@ -30,10 +31,13 @@ const WritePost = () => {
 
     return (
         <div className="write-post">
-            <div className="user-information">
-                <img src={ProfilePhoto} alt="profile photo not available" className="profile-photo" />
-                <h3 style={{marginLeft: '0.5rem'}}>{user ? user.name : 'Guest'}</h3>
-            </div>
+            {isPending && <LoadingWritePost />}
+            {!isPending && 
+                <div className="user-information">
+                    <img src={ProfilePhoto} alt="profile photo not available" className="profile-photo" />
+                    <h3>{user ? user.name : 'Guest'}</h3>
+                </div>
+            }
             <img src={MakePost} alt="icon not available" className="make-post-icon" />
             <textarea ref={bodyRef} placeholder="What's On Your Mind?"></textarea>
             <img src={AddImage} alt="icon not available" className="add-image" />

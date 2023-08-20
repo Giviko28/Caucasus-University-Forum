@@ -10,17 +10,29 @@
   grid-template-rows: 1fr 2fr 1fr;
 }
 .write-post .user-information {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  align-self: center;
+  align-self: start;
   justify-self: start;
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 15px;
   margin-left: 15px;
   margin-top: 15px;
-  width: 125px;
+}
+.write-post .user-information .profile-photo {
+  grid-column: 1;
+  justify-self: center;
+  align-self: center;
+  height: 60px;
+  width: 60px;
+  cursor: pointer;
+}
+.write-post .user-information .profile-photo:active {
+  transform: scale(0.95);
 }
 .write-post .user-information h3 {
+  grid-column: 2;
+  align-self: center;
+  justify-self: start;
   cursor: pointer;
   transition: 0.3s linear;
 }
@@ -28,14 +40,6 @@
   color: #7C7C7C;
 }
 .write-post .user-information h3:active {
-  transform: scale(0.95);
-}
-.write-post .user-information .profile-photo {
-  height: 60px;
-  width: 60px;
-  cursor: pointer;
-}
-.write-post .user-information .profile-photo:active {
   transform: scale(0.95);
 }
 .write-post .make-post-icon {

@@ -1,0 +1,39 @@
+$white: #FFFFFF;
+$gray: #7C7C7C;
+$light-gray: #F2F2F2;
+
+@keyframes loading-animation {
+    0% {
+        background-color: $light-gray;
+    }
+
+    100% {
+        background-color: lightgray;
+    }
+}
+
+.loading-profile-icon {
+    grid-row: 1;
+    grid-column: 1;
+    display: grid;
+    grid-template-rows: auto auto;
+    gap: 10px;
+    justify-items: center;
+    align-items: center;
+    margin-top: 30px;
+
+    .loading-profile-photo {
+        animation: loading-animation 1s linear infinite alternate;
+        grid-row: 1;
+        width: 100px;
+        height: 100px;
+    }
+
+    .loading-user-name {
+        animation: loading-animation 1s linear infinite alternate;
+        grid-row: 2;
+        height: 25px;
+        width: 110px;
+        border-radius: 5px;
+    }
+}

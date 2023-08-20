@@ -1,4 +1,4 @@
-@keyframes loading-schools {
+@keyframes loading-animation {
   0% {
     background-color: #F2F2F2;
   }
@@ -19,7 +19,7 @@
   justify-content: space-evenly;
 }
 .loading-filter-list .loading-school-name {
-  animation: loading-schools 1s linear infinite alternate;
+  animation: loading-animation 1s linear infinite alternate;
   width: 120px;
   height: 40px;
   border: none;
