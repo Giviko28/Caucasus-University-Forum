@@ -3,7 +3,7 @@ import Posts from './Posts';
 import useFetch from '../hooks/useFetch';
 
 const Timeline = ({filter}) => {
-    const { data: posts, isPending, error } = useFetch(filter);
+    const { data: posts, isPending, error } = useFetch('/posts');
 
     // const filteredPosts = posts && filter ? posts.filter(post => post.school === filter) : posts;
 

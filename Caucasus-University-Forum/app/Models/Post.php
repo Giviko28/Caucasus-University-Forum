@@ -12,7 +12,7 @@ class Post extends Model
 
     public function scopeFilter($query, $filters)
     {
-        if ($filters['category']) {
+        if (isset($filters['category'])) {
             $query->where('category_id', $filters['category']);
         }
     }
