@@ -10,7 +10,8 @@ import LoadingWritePost from './loading-components/LoadingWritePost';
 const WritePost = () => {
     const {user, isPending} = useStateContext();
     const bodyRef = useRef();
-    const onClick = (ev) => {
+
+    const publish = (ev) => {
         ev.preventDefault();
         const payload = {
             body: bodyRef.current.value
@@ -41,7 +42,7 @@ const WritePost = () => {
             <img src={MakePost} alt="icon not available" className="make-post-icon" />
             <textarea ref={bodyRef} placeholder="What's On Your Mind?"></textarea>
             <img src={AddImage} alt="icon not available" className="add-image" />
-            <button onClick={onClick}>Publish</button>
+            <button onClick={publish}>Publish</button>
         </div>
     );
 }
