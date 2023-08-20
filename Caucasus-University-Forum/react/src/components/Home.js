@@ -4,11 +4,21 @@ import Profile from './Profile';
 import Navbar from  './Navbar';
 import FilterList from  './FilterList';
 import Timeline from './Timeline';
+import axiosClient from "./axios-client";
+import {useStateContext} from "../contexts/StateContext";
 
 const Home = () => {
     const [filterSchool, setFilterSchool] = useState(null);
+    const {token, setUser} = useStateContext();
     useEffect(() => {
         document.body.className = 'home-body';
+
+        if(token){
+            axiosClient.get('/user')
+                .then(response => {
+                    setUser(response.data);
+                })
+        }
     }, []);
 
     const handleFilter = (school) => {
