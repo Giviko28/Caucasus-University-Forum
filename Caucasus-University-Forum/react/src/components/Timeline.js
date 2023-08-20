@@ -4,14 +4,16 @@ import useFetch from '../hooks/useFetch';
 import LoadingPosts from "./loading-components/LoadingPosts";
 
 const Timeline = ({filter}) => {
-    const { data: posts, isPending, error } = useFetch('/posts');
+    const { data: posts, isPending, error } = useFetch('/post');
 
     // const filteredPosts = posts && filter ? posts.filter(post => post.school === filter) : posts;
 
     return (
         <div className="timeline">
             <WritePost />
-            {isPending && <LoadingPosts />}
+            {isPending && Array.from({ length: 2 }).map((_, index) => (
+                <LoadingPosts key={index} />
+            ))}
             {error && <div> {error} </div> }
             {posts && <Posts posts={posts} />}
         </div>
