@@ -59,17 +59,17 @@
   align-items: center;
   width: 800px;
 }
-.main .navigation-bar button {
+.main .navigation-bar button, .main .navigation-bar a {
   border: none;
   background: none;
   font-size: 25px;
   cursor: pointer;
   transition: 0.3s linear;
 }
-.main .navigation-bar button:hover {
+.main .navigation-bar button:hover, .main .navigation-bar a:hover {
   color: #7C7C7C;
 }
-.main .navigation-bar button:active {
+.main .navigation-bar button:active, .main .navigation-bar a:active {
   transform: scale(0.95);
 }
 .main .navigation-bar .login {
@@ -117,7 +117,7 @@
   align-items: center;
   justify-content: space-evenly;
 }
-.main .filter-list button {
+.main .filter-list button, .main .filter-list a {
   width: 120px;
   height: 40px;
   border: none;
@@ -128,14 +128,14 @@
   cursor: pointer;
   transition: 0.3s linear;
 }
-.main .filter-list button:hover {
+.main .filter-list button:hover, .main .filter-list a:hover {
   background-color: #A9EF9A;
   color: #000000;
 }
-.main .filter-list button:active {
+.main .filter-list button:active, .main .filter-list a:active {
   transform: scale(0.95);
 }
-.main .filter-list button:focus {
+.main .filter-list button:focus, .main .filter-list a:focus {
   background-color: #A9EF9A;
 }
 .main .timeline {

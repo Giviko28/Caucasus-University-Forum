@@ -1,0 +1,72 @@
+@keyframes loading-animation {
+  0% {
+    background-color: #F2F2F2;
+  }
+  100% {
+    background-color: lightgray;
+  }
+}
+.loading-post {
+  background-color: #FFFFFF;
+  width: 730px;
+  box-shadow: 0 5px 30px 0 rgba(0, 0, 0, 0.3);
+  border-radius: 25px;
+  margin-bottom: 30px;
+  height: 210px;
+  display: grid;
+  grid-template-columns: 1fr 6fr 1fr;
+  grid-template-rows: 1fr 2fr;
+}
+.loading-post .loading-profile-photo {
+  animation: loading-animation 1s linear infinite alternate;
+  grid-row: 1;
+  grid-column: 1;
+  height: 60px;
+  width: 60px;
+  align-self: end;
+  margin-left: 15px;
+  margin-top: 15px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+.loading-post .loading-user-info {
+  grid-row: 1;
+  grid-column: 2;
+  align-self: center;
+  justify-self: start;
+  margin-top: 5px;
+  width: 120px;
+  height: 50px;
+}
+.loading-post .loading-user-info .loading-name {
+  animation: loading-animation 1s linear infinite alternate;
+  width: 120px;
+  height: 15px;
+  border-radius: 5px;
+}
+.loading-post .loading-user-info .loading-school {
+  animation: loading-animation 1s linear infinite alternate;
+  margin-top: 10px;
+  width: 35px;
+  height: 15px;
+  border-radius: 5px;
+}
+.loading-post .loading-body {
+  grid-row: 2;
+  grid-column: 2;
+  justify-self: start;
+  align-self: start;
+  margin-top: 15px;
+  height: 80px;
+  width: 548px;
+}
+.loading-post .loading-body .loading-text {
+  margin-bottom: 7px;
+  animation: loading-animation 1s linear infinite alternate;
+  border-radius: 5px;
+  height: 24px;
+  width: 550px;
+}
+.loading-post .loading-body .loading-text:last-child {
+  width: 250px;
+}/*# sourceMappingURL=loading-posts.css.map */

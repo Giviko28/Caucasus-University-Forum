@@ -4,14 +4,11 @@ import '../css/registration.css';
 import {useStateContext} from "../contexts/StateContext";
 import {Redirect} from "react-router-dom";
 import axiosClient from "./axios-client";
-import {getCategories} from "../hooks/getCategories";
+import useFetch from '../hooks/useFetch';
 
 const Registration = () => {
     const [t, i18n] = useTranslation('authreg');
-    const [schools, setSchools] = useState(null);
-    useEffect(() => {
-        getCategories(setSchools);
-    }, []);
+    const { data: schools, isPending, error } = useFetch('/categories');
     const {setUser, setToken, token} = useStateContext();
     const nameRef = useRef();
     const emailRef = useRef();
@@ -106,6 +103,8 @@ const Registration = () => {
                     inputErrors.category? {color: 'red', borderColor: 'red'}: {}
                 }>
                     <option>{t('labels.choose-school')}</option>
+                    {isPending && <p>loading...</p>}
+                    {error && <div> {error} </div> }
                     {schools && schools.map((school) => (
                         <option value={school.id}>{school.name}</option>
                     ))}
