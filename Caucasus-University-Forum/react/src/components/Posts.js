@@ -2,6 +2,7 @@ import '../css/post.css';
 import ProfilePhoto from '../svg/profile-photo.svg';
 import LikeIcon from '../svg/like.svg';
 import DislikeIcon from '../svg/dislike.svg';
+import xButton from '../svg/x.svg';
 import {useStateContext} from "../contexts/StateContext";
 import axiosClient from "./axios-client";
 
@@ -32,6 +33,7 @@ const Posts = ({posts}) => {
         <div>
             {posts.map((post) => (
                 <div className="post" key={post.id}>
+                    {user && user.id === post.author.id ? <img onClick={() => Delete(post.id)} src={xButton} alt='icon not found' className='x-icon' />: ''}
                     <img src={ProfilePhoto} alt="profile photo not available" className="profile-photo" />
                     <div className="user-name">
                         <h3>{post.author.name}</h3>
@@ -39,12 +41,11 @@ const Posts = ({posts}) => {
                     </div>
                     <p>{post.body}</p>
                     <div className="post-details">
-                        <h5>{post.created_at}</h5>
+                        <h5>12:27</h5>
                         <div className="vl"></div>
                         <h4>Comments</h4>
                     </div>
                     <div className="reactions">
-                        {user && user.id === post.author.id ? <button onClick={() => Delete(post.id)}>Delete</button> : ''}
                         <div className="likes">
                             <h4 className="counter">{post.likes}</h4>
                             <button>

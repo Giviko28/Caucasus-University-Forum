@@ -9,6 +9,23 @@
   grid-template-columns: 1fr 6fr 1fr;
   grid-template-rows: 1fr 2fr 1fr;
 }
+.post .x-icon {
+  width: 15px;
+  height: 15px;
+  grid-row: 1;
+  grid-column: 3;
+  align-self: start;
+  justify-self: end;
+  margin-top: 20px;
+  margin-right: 20px;
+  cursor: pointer;
+}
+.post .x-icon:hover {
+  fill: #7C7C7C;
+}
+.post .x-icon:active {
+  transform: scale(0.95);
+}
 .post .profile-photo {
   grid-row: 1;
   grid-column: 1;
@@ -46,6 +63,10 @@
   font-size: 18px;
   height: 80px;
   width: 548px;
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
   word-wrap: break-word;
 }
 .post .post-details {

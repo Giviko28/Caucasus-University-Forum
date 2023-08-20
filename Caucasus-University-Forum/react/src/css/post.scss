@@ -15,6 +15,26 @@ $gray: #7C7C7C;
     grid-template-columns: 1fr 6fr 1fr;
     grid-template-rows: 1fr 2fr 1fr;
 
+    .x-icon{
+        width: 15px;
+        height: 15px;
+        grid-row: 1;
+        grid-column: 3;
+        align-self: start;
+        justify-self: end;
+        margin-top: 20px;
+        margin-right: 20px;
+        cursor: pointer;
+
+        &:hover {
+            fill: $gray;
+        }
+
+        &:active {
+            transform: scale(0.95);
+        }
+    }
+
     .profile-photo {
         grid-row: 1;
         grid-column: 1;
@@ -58,10 +78,10 @@ $gray: #7C7C7C;
         font-size: 18px;
         height: 80px;
         width: 548px;
-        // display: -webkit-box;
-        // overflow: hidden;
-        // -webkit-box-orient: vertical;
-        // -webkit-line-clamp: 3;
+        display: -webkit-box;
+        overflow: hidden;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 3;
         word-wrap: break-word;
     }
 
