@@ -1,19 +1,15 @@
-import {useEffect, useState} from "react";
-import axiosClient from "./axios-client";
-import {getCategories} from "../hooks/getCategories";
+import useFetch from '../hooks/useFetch';
+import LoadingFilterList from './loading-components/LoadingFilterList';
 
 const FilterList = ({handleFilter}) => {
-    const [schools, setSchools] = useState(null)
-    useEffect(() => {
-       getCategories(setSchools);
-    }, []);
-
+    const { data: schools, isPending, error } = useFetch('/categories');
+    
     return (
     <div className="filter-list">
+        {isPending && <LoadingFilterList />}
+        {error && <div> {error} </div> }
         {schools && schools.map((school) => (
-            <button href={`/?category=${school.name}`} style={{
-                marginTop: '5px'
-            }} onClick={() => handleFilter(school.id)} key={school.id}>{school.name}</button>
+            <button href={`/?category=${school.name}`} onClick={() => handleFilter(school.id)} key={school.id}>{school.name}</button>
         ))}
     </div>
   );

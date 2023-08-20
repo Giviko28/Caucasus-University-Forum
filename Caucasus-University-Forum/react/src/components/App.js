@@ -19,9 +19,6 @@ function App() {
                 <Route exact path="/registration">
                     <Registration />
                 </Route>
-                <Route exact path='/logout'>
-                    <Logout />
-                </Route>
                 <Route exact path='*'>
                     <Redirect to='/' />
                 </Route>

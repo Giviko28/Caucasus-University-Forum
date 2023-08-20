@@ -11,7 +11,7 @@ const Navbar = ({handleFilter}) => {
         <nav className="navigation-bar">
             <button onClick={() => handleFilter(null)}>{t('home')}</button>
             <button>{t('clubs')}</button>
-            {!token ? (<Link to="/authorization"><button className="login">{t('login')}</button></Link>) : (<Link to="/logout"><button className="login">{t('Log out')}</button></Link>)}
+            {!token ? (<Link to="/authorization"><button className="login">{t('login')}</button></Link>) : (<Link to="/logout"><button className="logout">{t('Log out')}</button></Link>)}
             <input type="text" placeholder={t('search')} />
         </nav>
     );
