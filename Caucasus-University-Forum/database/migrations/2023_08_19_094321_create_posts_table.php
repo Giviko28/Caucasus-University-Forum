@@ -18,8 +18,8 @@ return new class extends Migration
             $table->foreignId('user_id');
             $table->foreignId('category_id');
             $table->string('body');
-            $table->integer('likes');
-            $table->integer('dislikes');
+            $table->integer('likes')->default(0);
+            $table->integer('dislikes')->default(0);
             $table->timestamps();
         });
     }
