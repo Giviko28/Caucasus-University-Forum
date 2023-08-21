@@ -45,7 +45,7 @@ const Posts = ({posts}) => {
                     </div>
                     <p>{post.body}</p>
                     <div className="post-details">
-                        <h5>12:27</h5>
+                        <h4>{post.created_at}</h4>
                         <div className="vl"></div>
                         <h4>Comments</h4>
                     </div>

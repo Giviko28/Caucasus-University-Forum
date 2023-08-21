@@ -50,6 +50,15 @@ class PostController extends Controller
     }
     public function show()
     {
-        return Post::query()->latest()->filter(request(['category', 'keyword']))->get();
+        $posts = Post::query()->latest()->filter(request(['category', 'keyword']))->get();
+        return $posts->map(function ($post) {
+            return [
+                'id' => $post->id,
+                'body' => $post->body,
+                'author' => $post->author,
+                'category' => $post->category,
+                'created_at' => $post->created_at->diffForHumans()
+            ];
+        });
     }
 }

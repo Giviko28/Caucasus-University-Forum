@@ -93,12 +93,14 @@ $gray: #7C7C7C;
         align-self: center;
         display: flex;
         flex-direction: row;
-        align-items: center;  
-        justify-content: space-between;              
+        align-items: center;
+        justify-content: space-between;
         margin-top: -10px;
+        white-space: nowrap;
 
         .vl {
             border-left: solid 3px $black;
+            margin: 0 0.5rem;
             height: 20px;
         }
     }
@@ -120,8 +122,8 @@ $gray: #7C7C7C;
             align-items: center;
 
             button {
-                background: none;          
-                outline: none;      
+                background: none;
+                outline: none;
                 border: none;
                 cursor: pointer;
 
@@ -135,17 +137,17 @@ $gray: #7C7C7C;
             display: flex;
             flex-direction: column;
             align-items: center;
-            
+
             button {
-                background: none;          
-                outline: none;      
+                background: none;
+                outline: none;
                 border: none;
                 cursor: pointer;
 
                 &:active {
                     transform: scale(0.95);
-                    
-                    
+
+
                 }
 
             }

@@ -80,9 +80,11 @@
   align-items: center;
   justify-content: space-between;
   margin-top: -10px;
+  white-space: nowrap;
 }
 .post .post-details .vl {
   border-left: solid 3px #000000;
+  margin: 0 0.5rem;
   height: 20px;
 }
 .post .reactions {
@@ -123,4 +125,6 @@
 }
 .post .reactions .dislikes button:active {
   transform: scale(0.95);
-}/*# sourceMappingURL=post.css.map */
+}
+
+/*# sourceMappingURL=post.css.map */
