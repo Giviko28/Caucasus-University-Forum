@@ -3,6 +3,7 @@ import Posts from './Posts';
 import useFetch from '../hooks/useFetch';
 import LoadingPosts from "./loading-components/LoadingPosts";
 import SearchingProfiles from "./SearchingProfiles";
+import SearchingClubs from "./SearchingClubs";
 
 const Timeline = ({filterSchool, searchQuery, isSearched}) => {
     const payload = {
@@ -15,6 +16,7 @@ const Timeline = ({filterSchool, searchQuery, isSearched}) => {
         <div className="timeline">
             {!isSearched && <WritePost />}
             {isSearched && <SearchingProfiles searchQuery={searchQuery}/> }
+            {isSearched && <SearchingClubs />}
             {postsPending && Array.from({ length: 2 }).map((_, index) => (
                 <LoadingPosts key={index} />
             ))}

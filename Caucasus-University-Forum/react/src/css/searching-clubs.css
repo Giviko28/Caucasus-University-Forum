@@ -1,0 +1,32 @@
+.searched-clubs {
+  margin-bottom: 30px;
+  padding: 5px;
+  background-color: #7C7C7C;
+  border-radius: 10px;
+  box-shadow: 0 5px 30px 0 rgba(0, 0, 0, 0.3);
+  width: 730px;
+  height: 200px;
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  align-items: center;
+  justify-items: center;
+  gap: 5px;
+}
+.searched-clubs .clubs {
+  background-color: #FFFFFF;
+  box-shadow: 0 5px 30px 0 rgba(0, 0, 0, 0.3);
+  border-radius: 25px;
+  width: 150px;
+  height: 180px;
+  display: grid;
+  grid-template-rows: auto auto;
+}
+.searched-clubs .clubs img {
+  align-self: center;
+  justify-self: center;
+  width: 110px;
+}
+.searched-clubs .clubs .club-name {
+  align-self: start;
+  justify-self: center;
+}/*# sourceMappingURL=searching-clubs.css.map */

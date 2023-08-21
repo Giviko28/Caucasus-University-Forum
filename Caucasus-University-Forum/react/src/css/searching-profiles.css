@@ -1,8 +1,9 @@
 .searched-profiles {
   margin-bottom: 30px;
+  padding: 5px;
   background-color: #7C7C7C;
-  border-radius: 25px;
-  box-shadow: inline 0 5px 30px 0 rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  box-shadow: 0 5px 30px 0 rgba(0, 0, 0, 0.3);
   width: 730px;
   height: 250px;
   display: grid;
