@@ -1,0 +1,57 @@
+$white: #FFFFFF;
+$gray: #7C7C7C;
+$light-gray: #F2F2F2;
+
+@keyframes loading-animation {
+    0% {
+        background-color: $light-gray;
+    }
+
+    100% {
+        background-color: lightgray;
+    }
+}
+
+.loading-searched-user{
+    background-color: $white;
+    box-shadow: 0 5px 30px 0 rgba(0, 0, 0, 0.3);    
+    border-radius: 25px;
+    width: 220px;
+    height: 100px;
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 5px;
+
+    .loading-user-photo {
+        animation: loading-animation 1s linear infinite alternate;
+        align-self: center;
+        justify-self: center;
+        width: 70px;
+        height: 70px;
+        border-radius: 5px;
+    }
+
+    .loading-user-details{
+        align-self: center;
+        justify-self: start;
+        display: grid;
+        grid-template-rows: auto auto;
+        gap: 5px;
+        justify-items: start;
+        align-items: center;
+
+        .loading-user-name {
+            animation: loading-animation 1s linear infinite alternate;
+            height: 20px;
+            width: 85px;
+            border-radius: 5px;
+        }
+
+        .loading-user-school {
+            animation: loading-animation 1s linear infinite alternate;
+            width: 25px;
+            height: 20px;
+            border-radius: 5px;
+        }
+    }
+}
