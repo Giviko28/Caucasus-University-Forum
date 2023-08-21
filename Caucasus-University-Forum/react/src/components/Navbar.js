@@ -5,14 +5,15 @@ import axiosClient from "./axios-client";
 import {useRef} from "react";
 
 
-const Navbar = ({handleFilter, handleSearch}) => {
+const Navbar = ({setSearchQuery, setFilterSchool, setIsSearched}) => {
     const [t, i18n] = useTranslation('navbar');
     const {user, setUser, setToken} = useStateContext();
     const searchRef = useRef(null);
 
-    const onKeyDown = (e) => {
+    const searchContent = (e) => {
+        setIsSearched(true);
         if (e.key === 'Enter') {
-            handleSearch(searchRef.current.value)
+            setSearchQuery(searchRef.current.value)
         }
     }
     const logOut = (ev) => {
@@ -32,12 +33,13 @@ const Navbar = ({handleFilter, handleSearch}) => {
     return (
         <nav className="navigation-bar">
             <button onClick={() => {
-                handleFilter(null);
-                handleSearch(null);
+                setFilterSchool(null);
+                setSearchQuery(null);
+                setIsSearched(false);
             }}>{t('home')}</button>
             <button>{t('clubs')}</button>
             {!user ? (<Link to="/authorization"><button className="login">{t('login')}</button></Link>) : (<Link to="/authorization"><button onClick={logOut} className="logout">{t('Log out')}</button></Link>)}
-            <input onKeyDown={(e) => onKeyDown(e)} ref={searchRef} type="text" placeholder={t('search')} />
+            <input onKeyDown={(e) => searchContent(e)} ref={searchRef} type="text" placeholder={t('search')} />
         </nav>
     );
 }

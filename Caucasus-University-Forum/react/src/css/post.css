@@ -1,10 +1,10 @@
 .post {
   background-color: #FFFFFF;
   width: 730px;
+  height: 210px;
   box-shadow: 0 5px 30px 0 rgba(0, 0, 0, 0.3);
   border-radius: 25px;
   margin-bottom: 30px;
-  height: 210px;
   display: grid;
   grid-template-columns: 1fr 6fr 1fr;
   grid-template-rows: 1fr 2fr 1fr;
@@ -125,6 +125,4 @@
 }
 .post .reactions .dislikes button:active {
   transform: scale(0.95);
-}
-
-/*# sourceMappingURL=post.css.map */
+}/*# sourceMappingURL=post.css.map */

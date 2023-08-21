@@ -9,26 +9,20 @@ import LoadingProfile from './loading-components/LoadingProfile';
 
 const Home = () => {
     const {user, isPending} = useStateContext();
+    const [isSearched, setIsSearched] = useState(false);
     const [filterSchool, setFilterSchool] = useState(null);
     const [searchQuery, setSearchQuery] = useState(null);
     useEffect(() => {
         document.body.className = 'home-body';
     }, []);
 
-    const handleFilter = (school) => {
-        setFilterSchool(school);
-    }
-    const handleSearch = (keyword) => {
-        setSearchQuery(keyword);
-    }
-
     return (
         <div className="main">
             {isPending && <LoadingProfile />}
             {!isPending && <Profile user={user} />}
-            <Navbar handleSearch={handleSearch} handleFilter={handleFilter} />
-            <FilterList handleFilter={handleFilter} />
-            <Timeline searchQuery={searchQuery} filterSchool={filterSchool} />
+            <Navbar setSearchQuery={setSearchQuery} setFilterSchool={setFilterSchool} setIsSearched={setIsSearched}/>
+            <FilterList setFilterSchool={setFilterSchool} />
+            <Timeline filterSchool={filterSchool} searchQuery={searchQuery} isSearched={isSearched}/>
         </div>
     );
 }

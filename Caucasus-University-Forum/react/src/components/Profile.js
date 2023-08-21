@@ -8,6 +8,7 @@ import {findAllByLabelText} from "@testing-library/react";
 
 function Profile({user}) {
     const pictureRef = useRef(null);
+    
     const handleUpload = () => {
         if (pictureRef.current.files[0]) {
             const payload = {

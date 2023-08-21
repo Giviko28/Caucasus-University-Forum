@@ -1,7 +1,7 @@
 import useFetch from '../hooks/useFetch';
 import LoadingFilterList from './loading-components/LoadingFilterList';
 
-const FilterList = ({handleFilter}) => {
+const FilterList = ({setFilterSchool}) => {
     const { data: schools, isPending, error } = useFetch('/categories');
 
     return (
@@ -9,7 +9,7 @@ const FilterList = ({handleFilter}) => {
         {isPending && <LoadingFilterList />}
         {error && <div> {error} </div> }
         {schools && schools.map((school) => (
-            <button onClick={() => handleFilter(school.id)} key={school.id}>{school.name}</button>
+            <button onClick={() => setFilterSchool(school.id)} key={school.id}>{school.name}</button>
         ))}
     </div>
   );
