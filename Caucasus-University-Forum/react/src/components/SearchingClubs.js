@@ -8,28 +8,32 @@ const SearchingClubs = ({searchQuery}) => {
 
     return (  
             <div className="searched-clubs">
-            {/* // {clubs.map((club) => ( */}
-{/*             
-                {isPending && <LoadingSearchedClubs />}
-                {error && {error}} */}
+                <h2 className='title'>Clubs</h2>
 
-                <div className='clubs'>
-                    <img src={ProfilePhoto} alt="photo not found" />
-                    <h3 className='club-name'>club name</h3>
+                {/* {isPending && <LoadingSearchedUsers />}
+                    {error && {error}} */}
+                
+                {/* // {!isPending && users.map((user) => ( */}
+                <div className="clubs-container">
+                    <div className='clubs'>
+                        <img src={ProfilePhoto} alt="photo not found" />
+                        <h3 className='club-name'>club name</h3>
+                    </div>
+                    <div className='clubs'>
+                        <img src={ProfilePhoto} alt="photo not found" />
+                        <h3 className='club-name'>club name</h3>
+                    </div>
+                    <div className='clubs'>
+                        <img src={ProfilePhoto} alt="photo not found" />
+                        <h3 className='club-name'>club name</h3>
+                    </div>
+                    <div className='clubs'>
+                        <img src={ProfilePhoto} alt="photo not found" />
+                        <h3 className='club-name'>club name</h3>
+                    </div>
+                {/* // )} */}
                 </div>
-                <div className='clubs'>
-                    <img src={ProfilePhoto} alt="photo not found" />
-                    <h3 className='club-name'>club name</h3>
-                </div>
-                <div className='clubs'>
-                    <img src={ProfilePhoto} alt="photo not found" />
-                    <h3 className='club-name'>club name</h3>
-                </div>
-                <div className='clubs'>
-                    <img src={ProfilePhoto} alt="photo not found" />
-                    <h3 className='club-name'>club name</h3>
-                </div>
-            {/* // )} */}
+                <button className='see-all-button'>See all</button>
             </div>
     );
 }

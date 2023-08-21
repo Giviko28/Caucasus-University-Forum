@@ -5,15 +5,49 @@
   border-radius: 10px;
   box-shadow: 0 5px 30px 0 rgba(0, 0, 0, 0.3);
   width: 730px;
-  height: 250px;
+  height: 320px;
   display: grid;
-  grid-template-columns: auto auto auto;
-  grid-template-rows: auto auto;
+  grid-template-rows: auto auto auto;
   align-items: center;
   justify-items: center;
   gap: 5px;
 }
-.searched-profiles .user {
+.searched-profiles .title {
+  grid-row: 1;
+  color: #FFFFFF;
+  align-self: center;
+  justify-self: start;
+  margin-left: 20px;
+}
+.searched-profiles .see-all-button {
+  font-size: large;
+  width: 250px;
+  height: 30px;
+  background-color: #FFFFFF;
+  box-shadow: 0 5px 30px 0 rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+.searched-profiles .see-all-button:hover {
+  background-color: #A9EF9A;
+}
+.searched-profiles .see-all-button:active {
+  transform: scale(0.98);
+}
+.searched-profiles .users-container {
+  grid-row: 2;
+  align-self: start;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-template-rows: auto auto;
+  gap: 15px;
+  justify-items: center;
+  align-items: center;
+}
+.searched-profiles .users-container .user {
   background-color: #FFFFFF;
   box-shadow: 0 5px 30px 0 rgba(0, 0, 0, 0.3);
   border-radius: 25px;
@@ -23,12 +57,12 @@
   grid-template-columns: auto auto;
   gap: 5px;
 }
-.searched-profiles .user img {
+.searched-profiles .users-container .user img {
   align-self: center;
   justify-self: center;
   width: 70px;
 }
-.searched-profiles .user .user-details {
+.searched-profiles .users-container .user .user-details {
   align-self: center;
   justify-self: start;
 }/*# sourceMappingURL=searching-profiles.css.map */

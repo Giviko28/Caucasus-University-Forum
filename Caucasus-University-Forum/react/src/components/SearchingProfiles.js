@@ -9,63 +9,58 @@ const SearchingProfiles = ({searchQuery}) => {
 
     return (  
             <div className="searched-profiles">
-            {/* // {users.map((user) => ( */}
-{/*             
-                {isPending && <LoadingSearchedUsers />}
-                {error && {error}} */}
-
-                <div className='user'>
-                    <img src={ProfilePhoto} alt="photo not found" />
-                    <div className="user-details">
-                        <h3 className='user-name'>username</h3>
-                        <h5 className='user-school'>cst</h5>
+                <h2 className='title'>Profiles</h2>
+                <div className="users-container">
+                    {/* {isPending && <LoadingSearchedUsers />}
+                    {error && {error}} */}
+                {/* // {!isPending && users.map((user) => ( */}
+                            
+                    <div className='user'>
+                        <img src={ProfilePhoto} alt="photo not found" />
+                        <div className="user-details">
+                            <h3 className='user-name'>username</h3>
+                            <h5 className='user-school'>cst</h5>
+                        </div>
                     </div>
-                </div>
 
-
-
-                <div className='user'>
-                    <img src={ProfilePhoto} alt="photo not found" />
-                    <div className="user-details">
-                        <h3 className='user-name'>username</h3>
-                        <h5 className='user-school'>cst</h5>
+                    <div className='user'>
+                        <img src={ProfilePhoto} alt="photo not found" />
+                        <div className="user-details">
+                            <h3 className='user-name'>username</h3>
+                            <h5 className='user-school'>cst</h5>
+                        </div>
                     </div>
-                </div>
-                <div className='user'>
-                    <img src={ProfilePhoto} alt="photo not found" />
-                    <div className="user-details">
-                        <h3 className='user-name'>username</h3>
-                        <h5 className='user-school'>cst</h5>
+                    <div className='user'>
+                        <img src={ProfilePhoto} alt="photo not found" />
+                        <div className="user-details">
+                            <h3 className='user-name'>username</h3>
+                            <h5 className='user-school'>cst</h5>
+                        </div>
                     </div>
-                </div>
-
-
-
-
-                <div className='user'>
-                    <img src={ProfilePhoto} alt="photo not found" />
-                    <div className="user-details">
-                        <h3 className='user-name'>username</h3>
-                        <h5 className='user-school'>cst</h5>
+                    <div className='user'>
+                        <img src={ProfilePhoto} alt="photo not found" />
+                        <div className="user-details">
+                            <h3 className='user-name'>username</h3>
+                            <h5 className='user-school'>cst</h5>
+                        </div>
                     </div>
-                </div>
-
-                <div className='user'>
-                    <img src={ProfilePhoto} alt="photo not found" />
-                    <div className="user-details">
-                        <h3 className='user-name'>username</h3>
-                        <h5 className='user-school'>cst</h5>
+                    <div className='user'>
+                        <img src={ProfilePhoto} alt="photo not found" />
+                        <div className="user-details">
+                            <h3 className='user-name'>username</h3>
+                            <h5 className='user-school'>cst</h5>
+                        </div>
                     </div>
-                </div>
-
-                <div className='user'>
-                    <img src={ProfilePhoto} alt="photo not found" />
-                    <div className="user-details">
-                        <h3 className='user-name'>username</h3>
-                        <h5 className='user-school'>cst</h5>
+                    <div className='user'>
+                        <img src={ProfilePhoto} alt="photo not found" />
+                        <div className="user-details">
+                            <h3 className='user-name'>username</h3>
+                            <h5 className='user-school'>cst</h5>
+                        </div>
                     </div>
+                {/* // )} */}
                 </div>
-            {/* // )} */}
+                <button className="see-all-button">See all</button>
             </div>
     );
 }

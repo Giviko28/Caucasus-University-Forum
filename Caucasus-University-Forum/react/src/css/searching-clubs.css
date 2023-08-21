@@ -5,14 +5,48 @@
   border-radius: 10px;
   box-shadow: 0 5px 30px 0 rgba(0, 0, 0, 0.3);
   width: 730px;
-  height: 200px;
+  height: 280px;
   display: grid;
-  grid-template-columns: auto auto auto auto;
+  grid-template-rows: auto auto auto;
   align-items: center;
   justify-items: center;
   gap: 5px;
 }
-.searched-clubs .clubs {
+.searched-clubs .title {
+  grid-row: 1;
+  color: #FFFFFF;
+  align-self: center;
+  justify-self: start;
+  margin-left: 20px;
+}
+.searched-clubs .see-all-button {
+  font-size: large;
+  width: 250px;
+  height: 30px;
+  background-color: #FFFFFF;
+  box-shadow: 0 5px 30px 0 rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+.searched-clubs .see-all-button:hover {
+  background-color: #A9EF9A;
+}
+.searched-clubs .see-all-button:active {
+  transform: scale(0.98);
+}
+.searched-clubs .clubs-container {
+  grid-row: 2;
+  align-self: start;
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  gap: 15px;
+  justify-items: center;
+  align-items: center;
+}
+.searched-clubs .clubs-container .clubs {
   background-color: #FFFFFF;
   box-shadow: 0 5px 30px 0 rgba(0, 0, 0, 0.3);
   border-radius: 25px;
@@ -21,12 +55,12 @@
   display: grid;
   grid-template-rows: auto auto;
 }
-.searched-clubs .clubs img {
+.searched-clubs .clubs-container .clubs img {
   align-self: center;
   justify-self: center;
   width: 110px;
 }
-.searched-clubs .clubs .club-name {
+.searched-clubs .clubs-container .clubs .club-name {
   align-self: start;
   justify-self: center;
 }/*# sourceMappingURL=searching-clubs.css.map */

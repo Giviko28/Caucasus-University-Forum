@@ -10,17 +10,17 @@ const Timeline = ({filterSchool, searchQuery, isSearched}) => {
         category: filterSchool,
         keyword: searchQuery
     };
-    const { data: posts, isPending: postsPending, error: postsError } = useFetch('/posts', payload);
+    const { data: posts, isPending, error } = useFetch('/posts', payload);
 
     return (
         <div className="timeline">
             {!isSearched && <WritePost />}
             {isSearched && <SearchingProfiles searchQuery={searchQuery}/> }
             {isSearched && <SearchingClubs />}
-            {postsPending && Array.from({ length: 2 }).map((_, index) => (
+            {isPending && Array.from({ length: 2 }).map((_, index) => (
                 <LoadingPosts key={index} />
             ))}
-            {postsError && <div> {postsError} </div> }
+            {error && <div> {error} </div> }
             {posts && <Posts posts={posts} />}
         </div>
     );
