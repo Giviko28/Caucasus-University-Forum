@@ -5,14 +5,15 @@ import DislikeIcon from '../svg/dislike.svg';
 import xButton from '../svg/x.svg';
 import {useStateContext} from "../contexts/StateContext";
 import axiosClient from "./axios-client";
+import {backendBaseUrl} from "../config";
 
 const Posts = ({posts}) => {
     const {user} = useStateContext();
 
     const Delete = (id) => {
         // ev.preventDefault();
-        const payload = {id: id}
-        axiosClient.post('/post/delete', payload)
+        // const payload = {id: id}
+        axiosClient.post(`/post/delete/${id}`)
             .then(response => {
                 console.log(response);
                 if (response.status === 200) {
@@ -34,7 +35,10 @@ const Posts = ({posts}) => {
             {posts.map((post) => (
                 <div className="post" key={post.id}>
                     {user && user.id === post.author.id ? <img onClick={() => Delete(post.id)} src={xButton} alt='icon not found' className='x-icon' />: ''}
-                    <img src={ProfilePhoto} alt="profile photo not available" className="profile-photo" />
+                    {post.author.profile_picture
+                        ? <img src={backendBaseUrl + post.author.profile_picture } alt="profile photo not available" className="profile-photo" />
+                        : <img src={ProfilePhoto} alt="profile photo not available" className="profile-photo" />
+                    }
                     <div className="user-name">
                         <h3>{post.author.name}</h3>
                         <h5>{post.category.name}</h5>

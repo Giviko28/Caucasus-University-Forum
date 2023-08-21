@@ -28,19 +28,18 @@ class PostController extends Controller
 
     }
 
-    public function delete(Request $request)
+    public function delete(Post $post, Request $request)
     {
-        $data = $request->validate([
-            'id' => ['required']
-        ]) ;
-
-        $post = Post::find($data['id']);
-
-        if (!$post) {
-            return response([
-                'message' => 'Post not found'
-            ], 404);
-        }
+//        $data = $request->validate([
+//            'id' => ['required']
+//        ]) ;
+//        $post = Post::find($data['id']);
+//
+//        if (!$post) {
+//            return response([
+//                'message' => 'Post not found'
+//            ], 404);
+//        }
         $this->authorize('delete', $post);
 
         $post->delete();

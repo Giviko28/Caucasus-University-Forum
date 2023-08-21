@@ -6,6 +6,7 @@ import {useStateContext} from "../contexts/StateContext";
 import {useRef} from "react";
 import axiosClient from "./axios-client";
 import LoadingWritePost from './loading-components/LoadingWritePost';
+import {backendBaseUrl} from "../config";
 
 const WritePost = () => {
     const {user, isPending} = useStateContext();
@@ -33,9 +34,12 @@ const WritePost = () => {
     return (
         <div className="write-post">
             {isPending && <LoadingWritePost />}
-            {!isPending && 
+            {!isPending &&
                 <div className="user-information">
-                    <img src={ProfilePhoto} alt="profile photo not available" className="profile-photo" />
+                    {user && user.profile_picture
+                        ? <img src={backendBaseUrl + user.profile_picture } alt="profile photo not available" className="profile-photo" />
+                        : <img src={ProfilePhoto} alt="profile photo not available" className="profile-photo" />
+                    }
                     <h3>{user ? user.name : 'Guest'}</h3>
                 </div>
             }
