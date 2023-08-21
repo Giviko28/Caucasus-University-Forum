@@ -16,6 +16,12 @@ class Post extends Model
         if (isset($filters['category'])) {
             $query->where('category_id', $filters['category']);
         }
+        if (isset($filters['keyword'])) {
+            $query->where(fn($query) =>
+            $query->where('body', 'like', '%' . $filters['keyword'] . '%')
+                ->orWhereHas('author', fn($query) =>
+                $query->where('name', 'like', '%' . $filters['keyword'] . '%' )));
+        }
     }
     public function author()
     {

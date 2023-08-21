@@ -8,6 +8,8 @@
       <sourceFolder url="file://$MODULE_DIR$/Caucasus-University-Forum/tests" isTestSource="true" packagePrefix="Tests\" />
       <sourceFolder url="file://$MODULE_DIR$/Caucasus-University-Forum/tests/Feature" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/Caucasus-University-Forum/tests/Unit" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/spec" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/tests" isTestSource="true" />
       <excludeFolder url="file://$MODULE_DIR$/Caucasus-University-Forum/vendor/brick/math" />
       <excludeFolder url="file://$MODULE_DIR$/Caucasus-University-Forum/vendor/composer" />
       <excludeFolder url="file://$MODULE_DIR$/Caucasus-University-Forum/vendor/dflydev/dot-access-data" />
@@ -121,6 +123,7 @@
       <excludeFolder url="file://$MODULE_DIR$/Caucasus-University-Forum/vendor/vlucas/phpdotenv" />
       <excludeFolder url="file://$MODULE_DIR$/Caucasus-University-Forum/vendor/voku/portable-ascii" />
       <excludeFolder url="file://$MODULE_DIR$/Caucasus-University-Forum/vendor/webmozart/assert" />
+      <excludeFolder url="file://$MODULE_DIR$/Caucasus-University-Forum/vendor/itsgoingd/clockwork" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

@@ -3,9 +3,10 @@ import Posts from './Posts';
 import useFetch from '../hooks/useFetch';
 import LoadingPosts from "./loading-components/LoadingPosts";
 
-const Timeline = ({filterSchool}) => {
+const Timeline = ({filterSchool, searchQuery}) => {
     const payload = {
-        category: filterSchool
+        category: filterSchool,
+        keyword: searchQuery
     };
     const { data: posts, isPending, error } = useFetch('/posts', payload);
 
