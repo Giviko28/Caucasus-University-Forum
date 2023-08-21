@@ -1,7 +1,9 @@
 import ProfilePhoto from '../svg/profile-photo.svg';
 import '../css/searching-profiles.css';
 
-const SearchingProfiles = ({users}) => {
+const SearchingProfiles = ({searchQuery}) => {
+    const { data: users, isPending, error } = useFetch('/posts', searchQuery); 
+    //აქ ზემოთ იუზერები ამოიღე როგორც უნდა, სხვა იუზერები ზოგადად არა ის რომელიც ავტორიზებულია და ამას ეძებს
 
     return (  
             <div className="searched-profiles">
