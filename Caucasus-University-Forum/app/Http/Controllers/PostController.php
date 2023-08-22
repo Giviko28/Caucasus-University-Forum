@@ -24,13 +24,14 @@ class PostController extends Controller
             'category_id' => rand(1,10)
         ]);
 
-        foreach($data['images'] as $image)
-        {
-            $path = $image->store('post_pictures', 'public');
-            Image::create([
-                'path' => $path,
-                'post_id' => $post->id
-            ]);
+        if (isset($data['images'])) {
+            foreach ($data['images'] as $image) {
+                $path = $image->store('post_pictures', 'public');
+                Image::create([
+                    'path' => $path,
+                    'post_id' => $post->id
+                ]);
+            }
         }
 
         return response([

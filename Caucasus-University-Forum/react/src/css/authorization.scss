@@ -25,7 +25,7 @@ $gray: #7C7C7C;
 
     input {
         @include inputs;
-        
+
         &:first-of-type {
             margin-bottom: 15px;
         }
@@ -63,12 +63,25 @@ $gray: #7C7C7C;
         font-size: 24px;
         color: $gray;
         letter-spacing: 0.025rem;
-        
+
         &:hover {
             color: $green;
         }
     }
 }
+.flash-message {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: $green;
+    color: $black;
+    padding: 10px 20px;
+    border-radius: 5px;
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+.flash-message.visible {
+    opacity:1;
+}
 
 
- 

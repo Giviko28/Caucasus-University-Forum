@@ -4,9 +4,12 @@ import {Link, Redirect} from 'react-router-dom';
 import {useEffect, useRef, useState} from 'react';
 import {useStateContext} from "../contexts/StateContext";
 import axiosClient from "./axios-client";
+import FlashMessage from "./FlashMessage";
+import {useFlashContext} from "../contexts/FlashContext";
 
 const Authorization = () => {
     const [t, i18n] = useTranslation('authreg');
+    const {message, setMessage} = useFlashContext();
     const {setToken, setUser, token} = useStateContext();
     const emailRef = useRef();
     const passwordRef = useRef();
@@ -30,38 +33,45 @@ const Authorization = () => {
         axiosClient.post('/login', payload)
             .then(response => {
                 const data = response.data;
-                setUser(data.user);
-                setToken(data.token);
-                setDisplayError('none');
-                setErrorMessage(''); 
-                setInputErrors({
-                    email: false,
-                    password: false,
-                })
+                setMessage(data.message);
+                setTimeout(() => {
+                    setDisplayError('none');
+                    setErrorMessage('');
+                    setInputErrors({
+                        email: false,
+                        password: false,
+                    })
+                    setUser(data.user);
+                    setToken(data.token);
+                }, 1800)
             })
             .catch(error => {
                 const errorProps = error.response.data;
                 setDisplayError('block');
-                setErrorMessage(errorProps.message);  
+                setErrorMessage(errorProps.message);
                 if(errorProps.errors) {
                     setInputErrors({
-                        email: !!errorProps.errors.email,  
+                        email: !!errorProps.errors.email,
                         password: !!errorProps.errors.password,
                     });
                 } else {
                     setInputErrors({
-                        password: true 
+                        password: true
                     })
                 }
                 console.log(error);
             })
     }
+
+    if (token) {
+        return <Redirect to='/' />
+    }
     // const changeLanguage = (lang) => {
     //     i18n.changeLanguage(lang);
     // }
-    if (token) {
-        return <Redirect to='/'/>
-    }
+    // if (token) {
+    //     return <Redirect to='/'/>
+    // }
 
     return (
         <div>
@@ -87,6 +97,8 @@ const Authorization = () => {
                 <button onClick={() => changeLanguage('ge')}>ქართული</button>
                 <button onClick={() => changeLanguage('en')}>english</button>
             </div> */}
+
+            {message ? (<FlashMessage message={message} />) : ''}
         </div>
     );
 }

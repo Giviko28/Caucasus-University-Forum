@@ -7,9 +7,11 @@ import {useRef} from "react";
 import axiosClient from "./axios-client";
 import LoadingWritePost from './loading-components/LoadingWritePost';
 import {backendBaseUrl} from "../config";
+import {useFlashContext} from "../contexts/FlashContext";
 
 const WritePost = () => {
     const {user, isPending} = useStateContext();
+    const {setMessage} = useFlashContext();
     const bodyRef = useRef();
     const imagesRef = useRef();
 
@@ -22,14 +24,14 @@ const WritePost = () => {
         };
         axiosClient.postForm('/post', payload)
             .then(response => {
-                alert(response.data.message);
+                setMessage(response.data.message);
             })
             .catch(error => {
                 if (error.response.status === 401) {
-                    alert('Please login');
+                    setMessage('Please login');
                 }
                 if (error.response.status === 422) {
-                    alert('Input fields are incorrect');
+                    setMessage('Input fields are incorrect');
                 }
             })
     }

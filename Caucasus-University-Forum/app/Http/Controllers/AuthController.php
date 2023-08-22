@@ -26,7 +26,8 @@ class AuthController extends Controller
 
         return response([
             'user' => $user,
-            'token' => $token
+            'token' => $token,
+            'message' => 'Welcome back ' . $user->name
         ]);
     }
     public function signup(Request $request)

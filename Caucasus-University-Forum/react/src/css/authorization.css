@@ -40,9 +40,7 @@
   padding: 5px;
 }
 .authorization-form input:focus {
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
+  appearance: none;
   outline: none;
   border-bottom: solid 3px #A9EF9A;
   transition: 0.3s ease;
@@ -96,4 +94,22 @@
 }
 .authorization-form .to-register-btn:hover {
   color: #A9EF9A;
-}/*# sourceMappingURL=authorization.css.map */
+}
+
+.flash-message {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #A9EF9A;
+  color: #000000;
+  padding: 10px 20px;
+  border-radius: 5px;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+.flash-message.visible {
+  opacity: 1;
+}
+
+/*# sourceMappingURL=authorization.css.map */
