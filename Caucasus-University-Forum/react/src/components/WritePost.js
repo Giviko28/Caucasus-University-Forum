@@ -11,13 +11,16 @@ import {backendBaseUrl} from "../config";
 const WritePost = () => {
     const {user, isPending} = useStateContext();
     const bodyRef = useRef();
+    const imagesRef = useRef();
 
+    console.log(imagesRef);
     const publish = (ev) => {
         ev.preventDefault();
         const payload = {
-            body: bodyRef.current.value
+            body: bodyRef.current.value,
+            images: imagesRef.current.files
         };
-        axiosClient.post('/post', payload)
+        axiosClient.postForm('/post', payload)
             .then(response => {
                 alert(response.data.message);
             })
@@ -45,7 +48,9 @@ const WritePost = () => {
             }
             <img src={MakePost} alt="icon not available" className="make-post-icon" />
             <textarea ref={bodyRef} placeholder="What's On Your Mind?"></textarea>
-            <img src={AddImage} alt="icon not available" className="add-image" />
+            <label htmlFor="images"><img src={AddImage} alt="icon not available" className="add-image" /></label>
+            {/*<img src={AddImage} alt="icon not available" className="add-image" />*/}
+            <input ref={imagesRef} style={{display: 'none'}} name='images'  id='images' type="file" multiple/>
             <button onClick={publish}>Publish</button>
         </div>
     );

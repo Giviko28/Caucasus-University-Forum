@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Image;
 use App\Models\Post;
 use Illuminate\Http\Request;
 use Ramsey\Uuid\Exception\UnableToBuildUuidException;
@@ -14,13 +15,23 @@ class PostController extends Controller
 
         $data = $request->validate([
             'body' => ['required', 'max:255'],
+            'images.*' => ['image', 'mimes:jpeg,png,jpg', 'max:2048']
         ]);
 
-        Post::create([
+        $post = Post::create([
             'body' => $data['body'],
             'user_id' => $user->id,
             'category_id' => rand(1,10)
         ]);
+
+        foreach($data['images'] as $image)
+        {
+            $path = $image->store('post_pictures', 'public');
+            Image::create([
+                'path' => $path,
+                'post_id' => $post->id
+            ]);
+        }
 
         return response([
             'message' => 'Your post has been published'
