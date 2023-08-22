@@ -6,10 +6,11 @@ import xButton from '../svg/x.svg';
 import {useStateContext} from "../contexts/StateContext";
 import axiosClient from "./axios-client";
 import {backendBaseUrl} from "../config";
+import {useFlashContext} from "../contexts/FlashContext";
 
 const Posts = ({posts}) => {
     const {user} = useStateContext();
-
+    const {setMessage} = useFlashContext();
     const Delete = (id) => {
         // ev.preventDefault();
         // const payload = {id: id}
@@ -17,15 +18,15 @@ const Posts = ({posts}) => {
             .then(response => {
                 console.log(response);
                 if (response.status === 200) {
-                    alert('Post deleted successfully');
+                    setMessage('Post deleted successfully');
                 }
             })
             .catch(error => {
                 if (error.response.status === 403) {
-                    alert('You cant and shouldn\'t delete others posts!');
+                    setMessage('You cant and shouldn\'t delete others posts!');
                 }
                 if (error.response.status === 404) {
-                    alert('Post not found');
+                    setMessage('Post not found');
                 }
             })
     }

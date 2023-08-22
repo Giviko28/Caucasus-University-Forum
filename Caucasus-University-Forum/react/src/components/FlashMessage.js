@@ -6,7 +6,7 @@ const FlashMessage = ({message}) => {
             setIsVisible(true);
             const timeout = setTimeout(() => {
                 setIsVisible(false);
-            }, 1500);
+            }, 1250);
         }
     }, [message]);
 

@@ -43,7 +43,8 @@ const Authorization = () => {
                     })
                     setUser(data.user);
                     setToken(data.token);
-                }, 1800)
+                }, 2000)
+                // Es 2 wamshi ayenebs Users da Tokens, es ro ara token-is dayenebistanave daaredirect-ebda users
             })
             .catch(error => {
                 const errorProps = error.response.data;

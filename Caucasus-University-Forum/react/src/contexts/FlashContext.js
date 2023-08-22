@@ -11,7 +11,7 @@ export const FlashProvider = ({children}) => {
         _setMessage(message);
         setTimeout(() => {
             _setMessage(null);
-        }, 1500)
+        }, 2000)
     }
     return (
         <FlashContext.Provider value={{
