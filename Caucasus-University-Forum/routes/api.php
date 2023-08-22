@@ -3,7 +3,9 @@
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\UserController;
 use App\Models\Category;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -19,7 +21,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::middleware('auth:sanctum')->group(function () {
-    Route::get('user', function (Request $request) {
+    Route::get('/user', function (Request $request) {
         return $request->user();
     });
     Route::post('/post', [PostController::class, 'create']);
@@ -32,7 +34,8 @@ Route::middleware('auth:sanctum')->group(function () {
 Route::post('/signup', [AuthController::class, 'signup']);
 Route::post('/login', [AuthController::class, 'login']);
 
-Route::get('/logout', [AuthController::class, 'logout']);
+Route::get('/users',[UserController::class, 'getUsers']);
+
 Route::get('/posts', [PostController::class, 'show']);
 Route::get('/categories', function() {
     return Category::all();

@@ -9,7 +9,6 @@ const useFetch = (url, filter) => {
 
     if (filter) {
         url = url + `?${queryString.stringify(filter)}`;
-        console.log(url);
     }
 
     useEffect(() => {
