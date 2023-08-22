@@ -40,7 +40,9 @@
   padding: 5px;
 }
 .authorization-form input:focus {
-  appearance: none;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
   outline: none;
   border-bottom: solid 3px #A9EF9A;
   transition: 0.3s ease;
@@ -110,6 +112,4 @@
 
 .flash-message.visible {
   opacity: 1;
-}
-
-/*# sourceMappingURL=authorization.css.map */
+}/*# sourceMappingURL=authorization.css.map */

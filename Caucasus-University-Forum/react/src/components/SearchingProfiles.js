@@ -7,14 +7,13 @@ import {backendBaseUrl} from "../config";
 const SearchingProfiles = ({searchQuery}) => {
     const payload = {keyword: searchQuery};
     const { data: users, isPending, error } = useFetch(`/users`, payload);
-    //აქ ზემოთ იუზერები ამოიღე როგორც უნდა, სხვა იუზერები ზოგადად არა ის რომელიც ავტორიზებულია და ამას ეძებს
 
     return (
             <div className="searched-profiles">
                 <h2 className='title'>Profiles</h2>
                 <div className="users-container">
-                    {/*/!* {isPending && <LoadingSearchedUsers />}*/}
-                    {/*{error && {error}} *!/*/}
+                    {isPending && <LoadingSearchedUsers />}
+                    {error && {error}}
                     {!isPending && users && users.map((user, index) =>(
                     <div className='user' key={index}>
                         <img src={user.profile_picture ? backendBaseUrl + user.profile_picture : ProfilePhoto} alt="photo not found" />
@@ -24,7 +23,21 @@ const SearchingProfiles = ({searchQuery}) => {
                         </div>
                     </div>
                     ))}
-                {/* // )} */}
+
+                    <div className='user' >
+                        <img src={ProfilePhoto} alt="photo not found" />
+                        <div className="user-details">
+                            <h3 className='user-name'>username</h3>
+                            <h5 className='user-school'>CST</h5>
+                        </div>
+                    </div>
+                    <div className='user'>
+                        <img src={ProfilePhoto} alt="photo not found" />
+                        <div className="user-details"> 
+                            <h3 className='user-name'>username</h3>
+                            <h5 className='user-school'>CST</h5>
+                        </div>
+                    </div>
                 </div>
                 <button className="see-all-button">See all</button>
             </div>

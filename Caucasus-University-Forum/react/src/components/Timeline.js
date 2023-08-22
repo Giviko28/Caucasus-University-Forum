@@ -15,8 +15,16 @@ const Timeline = ({filterSchool, searchQuery, isSearched}) => {
     return (
         <div className="timeline">
             {!isSearched && <WritePost />}
-            {isSearched && <SearchingProfiles searchQuery={searchQuery}/> }
-            {isSearched && <SearchingClubs />}
+            {isSearched && <nav className="searching-navbar">
+                <button>All</button>
+                <button>Profiles</button>
+                <button>Clubs</button>
+                <button>Posts</button>
+            </nav>}
+            {isSearched && <div className="searched-users-and-clubs">
+                <SearchingProfiles searchQuery={searchQuery}/>
+                <SearchingClubs />
+            </div>}
             {isPending && Array.from({ length: 2 }).map((_, index) => (
                 <LoadingPosts key={index} />
             ))}

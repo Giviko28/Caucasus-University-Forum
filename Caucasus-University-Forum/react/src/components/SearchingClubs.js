@@ -1,5 +1,6 @@
 import ProfilePhoto from '../svg/profile-photo.svg';
 import '../css/searching-clubs.css';
+import LoadingSearchedUsers from './loading-components/LoadingSearchedUsers';
 import useFetch from '../hooks/useFetch';
 
 const SearchingClubs = ({searchQuery}) => {
@@ -11,23 +12,15 @@ const SearchingClubs = ({searchQuery}) => {
                 <h2 className='title'>Clubs</h2>
 
                 {/* {isPending && <LoadingSearchedUsers />}
-                    {error && {error}} */}
+                {error && {error}} */}
                 
-                {/* // {!isPending && users.map((user) => ( */}
+                {/* // {!isPending && users.slice(0, 2).map((user) => ( */}
                 <div className="clubs-container">
-                    <div className='clubs'>
+                    <div className='club'>
                         <img src={ProfilePhoto} alt="photo not found" />
                         <h3 className='club-name'>club name</h3>
                     </div>
-                    <div className='clubs'>
-                        <img src={ProfilePhoto} alt="photo not found" />
-                        <h3 className='club-name'>club name</h3>
-                    </div>
-                    <div className='clubs'>
-                        <img src={ProfilePhoto} alt="photo not found" />
-                        <h3 className='club-name'>club name</h3>
-                    </div>
-                    <div className='clubs'>
+                    <div className='club'>
                         <img src={ProfilePhoto} alt="photo not found" />
                         <h3 className='club-name'>club name</h3>
                     </div>
