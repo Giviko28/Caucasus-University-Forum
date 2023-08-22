@@ -6,7 +6,13 @@ const FlashContext = createContext({
 })
 
 export const FlashProvider = ({children}) => {
-    const [message, setMessage] = useState(null);
+    const [message, _setMessage] = useState(null);
+    const setMessage = (message) => {
+        _setMessage(message);
+        setTimeout(() => {
+            _setMessage(null);
+        }, 1500)
+    }
     return (
         <FlashContext.Provider value={{
             message,

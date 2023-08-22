@@ -7,10 +7,6 @@ const FlashMessage = ({message}) => {
             const timeout = setTimeout(() => {
                 setIsVisible(false);
             }, 1500);
-
-            return () => {
-                clearTimeout(timeout);
-            }
         }
     }, [message]);
 
