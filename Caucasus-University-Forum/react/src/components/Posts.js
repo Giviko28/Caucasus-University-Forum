@@ -14,7 +14,6 @@ const Posts = ({posts}) => {
     const {user} = useStateContext();
     const {setMessage} = useFlashContext();
     const comment = (e, postId) => {
-        console.log(commentRefs[postId]);
         const payload = {body: commentRefs[postId].value};
         if (e.key === 'Enter') {
             axiosClient.post(`/post/comment/${postId}`, payload)
@@ -66,7 +65,7 @@ const Posts = ({posts}) => {
                         <h4>{post.created_at}</h4>
                         <div className="vl"></div>
                         <h4>comments</h4>
-                        <input onKeyDown={(e) => comment(e, post.id)} ref={(input) => commentRefs[post.id] = input} type="text"/>
+                        <input id='inp' onKeyDown={(e) => comment(e, post.id)} ref={(input) => commentRefs[post.id] = input} type="text"/>
                     </div>
                     <div className="reactions">
                         <div className="likes">

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Image;
 use App\Models\Post;
+use Illuminate\Cache\RateLimiter;
 use Illuminate\Http\Request;
 use Ramsey\Uuid\Exception\UnableToBuildUuidException;
 
@@ -21,7 +22,7 @@ class PostController extends Controller
         $post = Post::create([
             'body' => $data['body'],
             'user_id' => $user->id,
-            'category_id' => rand(1,10)
+            'category_id' => $user->category->id
         ]);
 
         if (isset($data['images'])) {

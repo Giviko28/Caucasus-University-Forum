@@ -15,7 +15,6 @@ const WritePost = () => {
     const bodyRef = useRef();
     const imagesRef = useRef();
 
-    console.log(imagesRef);
     const publish = (ev) => {
         ev.preventDefault();
         const payload = {
