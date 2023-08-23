@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Image;
 use App\Models\Post;
+use Illuminate\Auth\AuthenticationException;
 use Illuminate\Cache\RateLimiter;
 use Illuminate\Http\Request;
 use Ramsey\Uuid\Exception\UnableToBuildUuidException;
@@ -12,6 +13,8 @@ class PostController extends Controller
 {
     public function create(Request $request)
     {
+        $this->authorize('create', Post::class);
+
         $user = $request->user();
 
         $data = $request->validate([
@@ -24,6 +27,7 @@ class PostController extends Controller
             'user_id' => $user->id,
             'category_id' => $user->category->id
         ]);
+
 
         if (isset($data['images'])) {
             foreach ($data['images'] as $image) {

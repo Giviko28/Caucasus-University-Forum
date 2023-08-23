@@ -4,6 +4,7 @@ namespace App\Policies;
 
 use App\Models\Post;
 use App\Models\User;
+use Carbon\Carbon;
 use Illuminate\Auth\Access\HandlesAuthorization;
 
 class PostPolicy
@@ -41,7 +42,11 @@ class PostPolicy
      */
     public function create(User $user)
     {
-        //
+        $twentyFourHoursAgo = Carbon::now()->subHours(24);
+        $recentPostsCount = $user->posts()
+            ->where('created_at', '>=',  $twentyFourHoursAgo)->count();
+
+        return $recentPostsCount < 10;
     }
 
     /**

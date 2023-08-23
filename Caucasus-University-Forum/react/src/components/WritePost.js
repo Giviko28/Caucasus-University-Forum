@@ -29,6 +29,9 @@ const WritePost = () => {
                 if (error.response.status === 401) {
                     setMessage('Please login');
                 }
+                if (error.response.status === 403) {
+                    setMessage('You\'ve exceeded your daily post limit')
+                }
                 if (error.response.status === 422) {
                     setMessage('Input fields are incorrect');
                 }
