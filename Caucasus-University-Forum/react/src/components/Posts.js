@@ -7,10 +7,27 @@ import {useStateContext} from "../contexts/StateContext";
 import axiosClient from "./axios-client";
 import {backendBaseUrl} from "../config";
 import {useFlashContext} from "../contexts/FlashContext";
+import {useRef, useState} from "react";
 
 const Posts = ({posts}) => {
+    const commentRefs = {};
     const {user} = useStateContext();
     const {setMessage} = useFlashContext();
+    const comment = (e, postId) => {
+        console.log(commentRefs[postId]);
+        const payload = {body: commentRefs[postId].value};
+        if (e.key === 'Enter') {
+            axiosClient.post(`/post/comment/${postId}`, payload)
+                .then(response => {
+                    setMessage(response.data.message)
+                })
+                .catch(error => {
+                    if(error.response.status === 422) {
+                        setMessage('You can\'t write an empty comment');
+                    }
+                })
+        }
+    }
     const Delete = (id) => {
         // ev.preventDefault();
         // const payload = {id: id}
@@ -48,7 +65,8 @@ const Posts = ({posts}) => {
                     <div className="post-details">
                         <h4>{post.created_at}</h4>
                         <div className="vl"></div>
-                        <h4>Comments</h4>
+                        <h4>comments</h4>
+                        <input onKeyDown={(e) => comment(e, post.id)} ref={(input) => commentRefs[post.id] = input} type="text"/>
                     </div>
                     <div className="reactions">
                         <div className="likes">
