@@ -14,6 +14,14 @@ const WritePost = () => {
     const {setMessage} = useFlashContext();
     const bodyRef = useRef();
     const imagesRef = useRef();
+    const btnRef = useRef();
+
+    const handleEnter = (e) => {
+        if (e.key === 'Enter') {
+            e.preventDefault();
+            btnRef.current.click(); // Enter-is dacheris dros daipostos posti
+        }
+    }
 
     const publish = (ev) => {
         ev.preventDefault();
@@ -23,6 +31,8 @@ const WritePost = () => {
         };
         axiosClient.postForm('/post', payload)
             .then(response => {
+                bodyRef.current.blur(); // Dapostvis mere focus-ed agar aris inputi
+                bodyRef.current.value = ''; // dapostvis mere inputi carieldeba
                 setMessage(response.data.message);
             })
             .catch(error => {
@@ -51,11 +61,11 @@ const WritePost = () => {
                 </div>
             }
             <img src={MakePost} alt="icon not available" className="make-post-icon" />
-            <textarea ref={bodyRef} placeholder="What's On Your Mind?"></textarea>
+            <textarea onKeyDown={(e) => handleEnter(e)} ref={bodyRef} placeholder="What's On Your Mind?"></textarea>
             <label htmlFor="images"><img src={AddImage} alt="icon not available" className="add-image" /></label>
             {/*<img src={AddImage} alt="icon not available" className="add-image" />*/}
             <input ref={imagesRef} style={{display: 'none'}} name='images'  id='images' type="file" multiple/>
-            <button onClick={publish}>Publish</button>
+            <button ref={btnRef} onClick={publish}>Publish</button>
         </div>
     );
 }
