@@ -3,11 +3,11 @@
   padding: 5px;
   background-color: #7C7C7C;
   border-radius: 10px;
-  box-shadow: 0 5px 30px 0 rgba(0, 0, 0, 0.5);
+  box-shadow: 0 5px 30px 0 rgba(0, 0, 0, 0.5), 0 5px 30px 0 rgba(0, 0, 0, 0.5) inset;
   width: 300px;
   height: 320px;
   display: grid;
-  grid-template-rows: auto auto auto;
+  grid-template-rows: 45px auto 45px;
   align-items: center;
   justify-items: center;
   gap: 5px;
@@ -55,6 +55,7 @@
   display: grid;
   grid-template-columns: auto auto;
   gap: 5px;
+  cursor: pointer;
 }
 .searched-clubs .clubs-container .club img {
   align-self: center;
@@ -64,4 +65,10 @@
 .searched-clubs .clubs-container .club .club-name {
   align-self: center;
   justify-self: start;
+}
+.searched-clubs .clubs-container .club:hover {
+  background-color: #F2F2F2;
+}
+.searched-clubs .clubs-container .club:active {
+  transform: scale(0.98);
 }/*# sourceMappingURL=searching-clubs.css.map */

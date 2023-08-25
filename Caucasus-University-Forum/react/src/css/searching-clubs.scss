@@ -3,6 +3,7 @@ $white: #FFFFFF;
 $green: #A9EF9A;
 $light-green: #DCEAD9;
 $black: #000000;
+$light-gray: #F2F2F2;
 $gray: #7C7C7C;
 
 .searched-clubs{
@@ -10,11 +11,11 @@ $gray: #7C7C7C;
     padding: 5px;
     background-color: $gray;
     border-radius: 10px;
-    box-shadow: 0 5px 30px 0 rgba(0, 0, 0, 0.5);
+    box-shadow: 0 5px 30px 0 rgba(0, 0, 0, 0.5), 0 5px 30px 0 rgba(0, 0, 0, 0.5) inset;
     width: 300px;
     height: 320px;
     display: grid;
-    grid-template-rows: auto auto auto;
+    grid-template-rows: 45px auto 45px;
     align-items: center;
     justify-items: center;
     gap: 5px;
@@ -66,6 +67,7 @@ $gray: #7C7C7C;
             display: grid;
             grid-template-columns: auto auto;
             gap: 5px;
+            cursor: pointer;
 
             img {
                 align-self: center;
@@ -76,6 +78,14 @@ $gray: #7C7C7C;
             .club-name{
                 align-self: center;
                 justify-self: start;
+            }
+
+            &:hover {
+                background-color: $light-gray;
+            }
+
+            &:active {
+                transform: scale(0.98);
             }
         }
     }
