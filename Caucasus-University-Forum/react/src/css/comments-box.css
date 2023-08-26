@@ -22,7 +22,7 @@
   width: 100%;
   height: 100%;
   border-radius: 15px 15px 0 0;
-  background-color: #7C7C7C;
+  background-color: #F2F2F2;
   display: grid;
   grid-template-columns: 2fr 8fr 4fr;
   gap: 10px;
@@ -31,7 +31,7 @@
 }
 .comment-box .comments-container .header .post-author {
   grid-column: 2;
-  color: #F2F2F2;
+  color: #7C7C7C;
   justify-self: start;
 }
 .comment-box .comments-container .header .go-back-arrow {
@@ -55,7 +55,7 @@
   gap: 10px;
   justify-content: center;
   align-items: center;
-  color: #F2F2F2;
+  color: #7C7C7C;
 }
 .comment-box .comments-container .header .reactions-in-comments .like-button {
   grid-column: 2;
@@ -83,7 +83,7 @@
   width: 100%;
   height: 100%;
   border-radius: 0 0 15px 15px;
-  background-color: #7C7C7C;
+  background-color: #F2F2F2;
   display: grid;
   grid-template-columns: 100px auto 100px;
   gap: 5px;
@@ -100,10 +100,10 @@
   justify-self: stretch;
   align-self: center;
   resize: none;
-  background-color: #F2F2F2;
+  background-color: #FFFFFF;
   height: 65px;
   border-radius: 5px;
-  border: none;
+  border: 2px solid #7C7C7C;
   outline: none;
   font-size: medium;
   padding: 5px 0 0 5px;
@@ -146,7 +146,7 @@
 }
 .comment-box .comments-container .comments {
   background-color: #F2F2F2;
-  box-shadow: 0 5px 30px 0 rgba(0, 0, 0, 0.5) inset;
-  overflow-y: scroll;
+  box-shadow: 0 5px 30px 0 rgba(0, 0, 0, 0.3) inset;
+  overflow-y: auto;
   padding: 10px;
 }/*# sourceMappingURL=comments-box.css.map */
