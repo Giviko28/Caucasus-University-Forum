@@ -1,9 +1,19 @@
+@keyframes opening-animation {
+  0% {
+    transform: scale(0.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
 .comment-box {
+  animation: opening-animation 0.3s ease 1;
   position: fixed;
   top: 0;
   left: 0;
   height: 100vh;
   width: 100vw;
+  background-color: rgba(255, 255, 255, 0.3);
   display: flex;
   justify-content: center;
   align-items: center;

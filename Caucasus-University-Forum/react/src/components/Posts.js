@@ -57,7 +57,7 @@ const Posts = ({posts}) => {
                     </div>
                     <div className="reactions">
                         <div className="likes">
-                            <h4 className="counter">{post.likes}</h4>
+                            <h4 className="counter">28</h4>
                             <button>
                                 <img src={LikeIcon} alt="icon not available" />
                             </button>
@@ -66,7 +66,7 @@ const Posts = ({posts}) => {
                             <button>
                                 <img src={DislikeIcon} alt="icon not available" />
                             </button>
-                            <h4 className="counter">{post.dislikes}</h4>
+                            <h4 className="counter">17</h4>
                         </div>
                     </div>
                 </div>

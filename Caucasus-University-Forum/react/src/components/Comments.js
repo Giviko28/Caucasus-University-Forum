@@ -14,12 +14,6 @@ const Comments = () => {
                 
                 <p className="comment-body">Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
             </div>
-
-
-
-
-
-            
         </div>
     );
 }
