@@ -24,7 +24,7 @@ const SearchingProfiles = ({searchQuery}) => {
                     </div>
                     ))}
 
-                    <div className='user' >
+                    {/* <div className='user' >
                         <img src={ProfilePhoto} alt="photo not found" />
                         <div className="user-details">
                             <h3 className='user-name'>username</h3>
@@ -37,7 +37,7 @@ const SearchingProfiles = ({searchQuery}) => {
                             <h3 className='user-name'>username</h3>
                             <h5 className='user-school'>CST</h5>
                         </div>
-                    </div>
+                    </div> */}
                 </div>
                 <button className="see-all-button">See all</button>
             </div>

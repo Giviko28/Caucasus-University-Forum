@@ -1,0 +1,180 @@
+$white: #FFFFFF;
+$green: #A9EF9A;
+$light-green: #DCEAD9;
+$light-green: #DCEAD9;
+$black: #000000;
+$gray: #7C7C7C;
+$light-gray: #F2F2F2;
+
+.comment-box {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100vw;
+    // background-color: $white;
+    // opacity: 55%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .comments-container {
+        background-color: $white;
+        box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.3);
+        border-radius: 15px;
+        height: 550px;
+        width: 700px;
+        display: grid;
+        grid-template-rows: 70px auto 100px;
+
+        .header {
+            grid-row: 1;
+            width: 100%;
+            height: 100%;
+            border-radius: 15px 15px 0 0;
+            background-color: $gray;
+            display: grid;
+            grid-template-columns: 1fr 8fr 4fr;
+            gap: 10px;
+            justify-items: center;
+            align-items: center;
+
+            .post-author {
+                grid-column: 2;
+                color: $light-gray;
+                justify-self: start;
+            }
+
+            .go-back-arrow{
+                grid-column: 1;
+                height: 35px;
+                cursor: pointer;
+                transition: 0.3 ease;
+
+                &:active {
+                    transform: scale(0.95);
+                }
+            }
+
+            .reactions-in-comments {
+                grid-column: 3;
+                justify-self: end;
+                margin-right: 20px;
+                height: 50px;
+                width: fit-content;
+                display: grid;
+                grid-template-columns: auto auto auto auto;
+                gap: 10px;
+                justify-content: center;
+                align-items: center;
+                color: $light-gray;
+
+                @mixin reaction-buttons {
+                    background-color: transparent;
+                    border: none;
+                    outline: none;
+                    justify-self: center;
+                }
+
+                .like-button {
+                    grid-column: 2;
+                    @include reaction-buttons;
+                }
+
+                .like-counter {
+                    grid-column: 1;
+                }
+
+                .dislike-button {
+                    grid-column: 3;
+                    @include reaction-buttons;
+                    align-self: end;
+
+                }
+
+                .dislike-counter {
+                    grid-column: 4;
+                }
+            }
+        }
+
+        .write-comment {
+            grid-row: 3;
+            width: 100%;
+            height: 100%;
+            border-radius: 0 0 15px 15px;
+            background-color: $gray;
+            display: grid;
+            grid-template-columns: 100px auto 100px;
+            gap: 5px;
+
+            .comments-profile-photo {
+                height: 70px;
+                border-radius: 5px;
+                grid-column: 1;
+                align-self: center;
+                justify-self: center;
+            }
+
+            textarea {
+                grid-column: 2;
+                justify-self: stretch;
+                align-self: center;
+                resize: none;
+                background-color: $light-gray;
+                height: 65px;
+                border-radius: 5px;
+                border: none;
+                outline: none;
+                font-size: medium;
+                padding: 5px 0 0 5px ;
+            }
+
+            .make-comment {
+                grid-column: 3;
+                height: 65px;
+                width: 80px;
+                align-self: center;
+                justify-self: center;
+                display: grid;
+                grid-template-rows: auto auto;
+
+                .add-photo {
+                    grid-row: 1;
+                    height: 25px;
+                    cursor: pointer;
+
+                    &:active {
+                        transform: scale(0.98);
+                    }
+                }
+
+                button {
+                    grid-row: 2;
+                    height: 30;
+                    width:  fit-content;
+                    border: none;
+                    outline: none;
+                    border-radius: 20px;
+                    padding: 0 5px 0 5px;
+                    background-color: $green;
+                    cursor: pointer;
+                    transition: 0.3s ease;
+
+                    &:hover {
+                        background-color: $light-green;
+                    }
+            
+                    &:active {
+                        transform: scale(0.98);
+                    }
+                }
+            }
+        }
+
+        .comments {
+            background-color: $light-gray;
+            box-shadow: 0 5px 30px 0 rgba(0, 0, 0, 0.5) inset;
+        }
+    }
+}

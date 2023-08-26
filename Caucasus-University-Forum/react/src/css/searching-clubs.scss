@@ -68,6 +68,7 @@ $gray: #7C7C7C;
             grid-template-columns: auto auto;
             gap: 5px;
             cursor: pointer;
+            transition: 0.3 ease;
 
             img {
                 align-self: center;

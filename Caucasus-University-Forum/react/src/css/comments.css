@@ -1,0 +1,150 @@
+.comment-box {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.comment-box .comments-container {
+  background-color: #FFFFFF;
+  box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.3);
+  border-radius: 15px;
+  height: 550px;
+  width: 700px;
+  display: grid;
+  grid-template-rows: 70px auto 100px;
+}
+.comment-box .comments-container .header {
+  grid-row: 1;
+  width: 100%;
+  height: 100%;
+  border-radius: 15px 15px 0 0;
+  background-color: #7C7C7C;
+  display: grid;
+  grid-template-columns: 1fr 8fr 4fr;
+  gap: 10px;
+  justify-items: center;
+  align-items: center;
+}
+.comment-box .comments-container .header .post-author {
+  grid-column: 2;
+  color: #F2F2F2;
+  justify-self: start;
+}
+.comment-box .comments-container .header .go-back-arrow {
+  grid-column: 1;
+  height: 35px;
+  cursor: pointer;
+  transition: 0.3 ease;
+}
+.comment-box .comments-container .header .go-back-arrow:active {
+  transform: scale(0.95);
+}
+.comment-box .comments-container .header .reactions-in-comments {
+  grid-column: 3;
+  justify-self: end;
+  margin-right: 20px;
+  height: 50px;
+  width: -moz-fit-content;
+  width: fit-content;
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  color: #F2F2F2;
+}
+.comment-box .comments-container .header .reactions-in-comments .like-button {
+  grid-column: 2;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  justify-self: center;
+}
+.comment-box .comments-container .header .reactions-in-comments .like-counter {
+  grid-column: 1;
+}
+.comment-box .comments-container .header .reactions-in-comments .dislike-button {
+  grid-column: 3;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  justify-self: center;
+  align-self: end;
+}
+.comment-box .comments-container .header .reactions-in-comments .dislike-counter {
+  grid-column: 4;
+}
+.comment-box .comments-container .write-comment {
+  grid-row: 3;
+  width: 100%;
+  height: 100%;
+  border-radius: 0 0 15px 15px;
+  background-color: #7C7C7C;
+  display: grid;
+  grid-template-columns: 100px auto 100px;
+  gap: 5px;
+}
+.comment-box .comments-container .write-comment .comments-profile-photo {
+  height: 70px;
+  border-radius: 5px;
+  grid-column: 1;
+  align-self: center;
+  justify-self: center;
+}
+.comment-box .comments-container .write-comment textarea {
+  grid-column: 2;
+  justify-self: stretch;
+  align-self: center;
+  resize: none;
+  background-color: #F2F2F2;
+  height: 65px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+  font-size: medium;
+  padding: 5px 0 0 5px;
+}
+.comment-box .comments-container .write-comment .make-comment {
+  grid-column: 3;
+  height: 65px;
+  width: 80px;
+  align-self: center;
+  justify-self: center;
+  display: grid;
+  grid-template-rows: auto auto;
+}
+.comment-box .comments-container .write-comment .make-comment .add-photo {
+  grid-row: 1;
+  height: 25px;
+  cursor: pointer;
+}
+.comment-box .comments-container .write-comment .make-comment .add-photo:active {
+  transform: scale(0.98);
+}
+.comment-box .comments-container .write-comment .make-comment button {
+  grid-row: 2;
+  height: 30;
+  width: -moz-fit-content;
+  width: fit-content;
+  border: none;
+  outline: none;
+  border-radius: 20px;
+  padding: 0 5px 0 5px;
+  background-color: #A9EF9A;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+.comment-box .comments-container .write-comment .make-comment button:hover {
+  background-color: #DCEAD9;
+}
+.comment-box .comments-container .write-comment .make-comment button:active {
+  transform: scale(0.98);
+}
+.comment-box .comments-container .comments {
+  background-color: #F2F2F2;
+  box-shadow: 0 5px 30px 0 rgba(0, 0, 0, 0.5) inset;
+}/*# sourceMappingURL=comments.css.map */

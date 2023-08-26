@@ -1,4 +1,5 @@
 import '../css/post.css';
+import Comments from './Comments';
 import ProfilePhoto from '../svg/profile-photo.svg';
 import LikeIcon from '../svg/like.svg';
 import DislikeIcon from '../svg/dislike.svg';
@@ -6,27 +7,14 @@ import xButton from '../svg/x.svg';
 import {useStateContext} from "../contexts/StateContext";
 import axiosClient from "./axios-client";
 import {backendBaseUrl} from "../config";
+import {useState} from "react";
 import {useFlashContext} from "../contexts/FlashContext";
-import {useRef, useState} from "react";
 
 const Posts = ({posts}) => {
-    const commentRefs = {};
     const {user} = useStateContext();
     const {setMessage} = useFlashContext();
-    const comment = (e, postId) => {
-        const payload = {body: commentRefs[postId].value};
-        if (e.key === 'Enter') {
-            axiosClient.post(`/post/comment/${postId}`, payload)
-                .then(response => {
-                    setMessage(response.data.message)
-                })
-                .catch(error => {
-                    if(error.response.status === 422) {
-                        setMessage('You can\'t write an empty comment');
-                    }
-                })
-        }
-    }
+    const [showComments, setShowComments] = useState(true);
+
     const Delete = (id) => {
         // ev.preventDefault();
         // const payload = {id: id}
@@ -65,7 +53,7 @@ const Posts = ({posts}) => {
                         <h4>{post.created_at}</h4>
                         <div className="vl"></div>
                         <h4>comments</h4>
-                        <input id='inp' onKeyDown={(e) => comment(e, post.id)} ref={(input) => commentRefs[post.id] = input} type="text"/>
+                        {showComments && post.id === 1 && <Comments postId={1} postAuthor={'george'} likes={post.likes} dislikes={post.dislikes}/>}
                     </div>
                     <div className="reactions">
                         <div className="likes">
