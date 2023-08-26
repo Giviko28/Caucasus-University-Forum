@@ -55,7 +55,7 @@ const Posts = ({posts}) => {
                         <h4>{post.created_at}</h4>
                         <div className="vl"></div>
                         <h4 className="comments-button" onClick={() => setShowComments(post.id)}>comments</h4>
-                        {showComments === post.id && <CommentsBox comments={post.comments} postId={1} postAuthor={'george'} likes={post.likes} dislikes={post.dislikes} setShowComments={setShowComments}/>}
+                        {showComments === post.id && <CommentsBox post={post} setShowComments={setShowComments}/>}
                     </div>
                     <div className="reactions">
                         <div className="likes">

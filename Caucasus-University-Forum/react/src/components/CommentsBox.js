@@ -12,21 +12,20 @@ import DislikeIcon from '../svg/dislike.svg';
 import { useState } from 'react';
 import useFetch from "../hooks/useFetch";
 
-const CommentsBox = ({comments, postId, postAuthor, likes, dislikes, setShowComments}) => {
+const CommentsBox = ({post, setShowComments}) => {
     const {user, isPending} = useStateContext();
     const commentRefs = {};
     const {setMessage} = useFlashContext();
 
-    console.log(comments)
     // const {data: comments, isPending, error} = usefetch();
     const comment = (e) => {
-        const payload = {body: commentRefs[postId].value};
+        const payload = {body: commentRefs[post.id].value};
         if (e.key === 'Enter') {
             e.preventDefault();
-            axiosClient.post(`/post/comment/${postId}`, payload)
+            axiosClient.post(`/post/comment/${post.id}`, payload)
                 .then(response => {
-                    commentRefs[postId].value = '';
-                    commentRefs[postId].blur();
+                    commentRefs[post.id].value = '';
+                    commentRefs[post.id].blur();
                     setMessage(response.data.message)
                 })
                 .catch(error => {
@@ -44,7 +43,7 @@ const CommentsBox = ({comments, postId, postAuthor, likes, dislikes, setShowComm
                     <img src={goBack} alt="icon not found" className='go-back-arrow' onClick={() => setShowComments('')}/>
 
                     <div className="post-author">
-                        <h2>{postAuthor}'s post</h2>
+                        <h2>{post.author.name}'s post</h2>
                     </div>
 
                     <div className="reactions-in-comments">
@@ -60,7 +59,7 @@ const CommentsBox = ({comments, postId, postAuthor, likes, dislikes, setShowComm
                 </div>
 
 
-                <Comments comments={comments} />
+                <Comments comments={post.comments} />
 
                 <div className="write-comment">
                     {user && user.profile_picture
@@ -68,7 +67,7 @@ const CommentsBox = ({comments, postId, postAuthor, likes, dislikes, setShowComm
                         : <img src={ProfilePhoto} alt="profile photo not available" className="comments-profile-photo" />
                     }
 
-                    <textarea id='inp' onKeyDown={(e) => comment(e)} ref={(input) => commentRefs[postId] = input} type="text" placeholder='make a comment'/>
+                    <textarea id='inp' onKeyDown={(e) => comment(e)} ref={(input) => commentRefs[post.id] = input} type="text" placeholder='make a comment'/>
 
                     <div className="make-comment">
                         <img src={addImage} alt="icon not found" className='add-photo'/>
