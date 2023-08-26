@@ -10,11 +10,13 @@ $light-gray: #F2F2F2;
     background-color: $white;
     box-shadow: 0 5px 30px 0 rgba(0, 0, 0, 0.3);
     border-radius: 10px;
-    // height: 75px;
-    width: 600px;
+    max-width: 600px;
+    min-width: 400px;
+    height: 80px;
     display: grid;
     grid-template-columns: 60px 540px;
     grid-template-rows: 25px 50px;
+    margin-bottom: 20px;
 
     .commenter-info {
         grid-row: 1;
@@ -61,10 +63,13 @@ $light-gray: #F2F2F2;
     .comment-body {
         grid-row: 2;
         grid-column: 2;
+        width: 540px;
+        justify-self: start;
+        align-self: start;
         display: -webkit-box;
         overflow: hidden;
         -webkit-box-orient: vertical;
-        -webkit-line-clamp: 3;
+        -webkit-line-clamp: 2;
         word-wrap: break-word;
     }
 }

@@ -12,8 +12,9 @@ const Comments = () => {
                 <img src={ProfilePhoto} alt="photo not found" className="commenter-photo" />
                 <div className="comment-timestamp">1s ago</div>
                 
-                <p className="comment-body">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis obcaecati eius sit et veniam quasi voluptas dolor corrupt. </p>
+                <p className="comment-body">Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
             </div>
+
         </div>
     );
 }
