@@ -9,12 +9,13 @@ import goBack from '../svg/go-back-arrow.svg';
 import addImage from '../svg/add-image.svg';
 import LikeIcon from '../svg/like.svg';
 import DislikeIcon from '../svg/dislike.svg';
+import { useState } from 'react';
 
 const CommentsBox = ({postId, postAuthor, likes, dislikes, setShowComments}) => {
     const {user, isPending} = useStateContext();
     const commentRefs = {};
     const {setMessage} = useFlashContext();
-    // const {data: comments, isPending, error} = usefetch()
+    // const {data: comments, isPending, error} = usefetch();
 
     const comment = (e) => {
         const payload = {body: commentRefs[postId].value};
@@ -35,7 +36,7 @@ const CommentsBox = ({postId, postAuthor, likes, dislikes, setShowComments}) => 
         <div className="comment-box">
             <div className="comments-container">
                 <div className="header">
-                    <img src={goBack} alt="icon not found" className='go-back-arrow' onClick={() => setShowComments('')}/>
+                    <img src={goBack} alt="icon not found" className='go-back-arrow' onClick={() => setInterval('')}/>
 
                     <div className="post-author">
                         <h2>{postAuthor}'s post</h2>
