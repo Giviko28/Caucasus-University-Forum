@@ -1,0 +1,38 @@
+.comment {
+  background-color: #FFFFFF;
+  box-shadow: 0 5px 30px 0 rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  height: 75px;
+  width: 600px;
+  display: grid;
+  grid-template-columns: 100px 500px;
+  grid-template-rows: 25px 50px;
+}
+.comment .commenter-info {
+  grid-row: 1;
+  grid-column-start: 1;
+  grid-column-end: 2;
+  justify-self: start;
+  align-self: center;
+  margin-left: 10px;
+  font-size: small;
+}
+.comment .commenter-photo {
+  grid-row: 2;
+  grid-column: 1;
+  justify-self: center;
+  align-self: center;
+  height: 50px;
+}
+.comment .comment-body {
+  grid-row: 2;
+  grid-column: 2;
+  width: 500px;
+  justify-self: start;
+  align-self: start;
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  word-wrap: break-word;
+}/*# sourceMappingURL=comment.css.map */

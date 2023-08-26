@@ -34,7 +34,7 @@ $light-gray: #F2F2F2;
             border-radius: 15px 15px 0 0;
             background-color: $gray;
             display: grid;
-            grid-template-columns: 1fr 8fr 4fr;
+            grid-template-columns: 2fr 8fr 4fr;
             gap: 10px;
             justify-items: center;
             align-items: center;
@@ -175,6 +175,8 @@ $light-gray: #F2F2F2;
         .comments {
             background-color: $light-gray;
             box-shadow: 0 5px 30px 0 rgba(0, 0, 0, 0.5) inset;
+            overflow-y: scroll;
+            padding: 10px;
         }
     }
 }

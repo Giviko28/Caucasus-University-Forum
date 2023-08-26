@@ -1,0 +1,50 @@
+$white: #FFFFFF;
+$green: #A9EF9A;
+$light-green: #DCEAD9;
+$light-green: #DCEAD9;
+$black: #000000;
+$gray: #7C7C7C;
+$light-gray: #F2F2F2;
+
+.comment {
+    background-color: $white;
+    box-shadow: 0 5px 30px 0 rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    height: 75px;
+    width: 600px;
+    display: grid;
+    grid-template-columns: 100px 500px;
+    grid-template-rows: 25px 50px;
+
+    .commenter-info {
+        grid-row: 1;
+        grid-column-start: 1;
+        grid-column-end: 2;
+        justify-self: start;
+        align-self: center;
+        margin-left: 10px;
+        font-size: small;
+    }
+
+    .commenter-photo {
+        grid-row: 2;
+        grid-column: 1;
+        justify-self: center;
+        align-self: center;
+        height: 50px;
+    }
+
+    .comment-body {
+        grid-row: 2;
+        grid-column: 2;
+        width: 500px;
+        justify-self: start;
+        align-self: start;
+        display: -webkit-box;
+        overflow: hidden;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 3;
+        word-wrap: break-word;
+    }
+    
+}

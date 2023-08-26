@@ -71,7 +71,7 @@ $gray: #7C7C7C;
         }
     }
 
-    p {
+    .post-body {
         grid-row: 2;
         grid-column: 2;
         justify-self: start;
@@ -103,6 +103,19 @@ $gray: #7C7C7C;
             border-left: solid 3px $black;
             margin: 0 0.5rem;
             height: 20px;
+        }
+
+        .comments-button{
+            cursor: pointer;
+            transition: 0.3s ease;
+
+            &:hover {   
+                color: $gray;
+            }
+
+            &:active {
+                transform: scale(0.98);
+            }
         }
     }
 

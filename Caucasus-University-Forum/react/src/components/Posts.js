@@ -1,5 +1,5 @@
 import '../css/post.css';
-import Comments from './Comments';
+import CommentsBox from './CommentsBox';
 import ProfilePhoto from '../svg/profile-photo.svg';
 import LikeIcon from '../svg/like.svg';
 import DislikeIcon from '../svg/dislike.svg';
@@ -13,7 +13,7 @@ import {useFlashContext} from "../contexts/FlashContext";
 const Posts = ({posts}) => {
     const {user} = useStateContext();
     const {setMessage} = useFlashContext();
-    const [showComments, setShowComments] = useState(true);
+    const [showComments, setShowComments] = useState('');
 
     const Delete = (id) => {
         // ev.preventDefault();
@@ -48,12 +48,12 @@ const Posts = ({posts}) => {
                         <h3>{post.author.name}</h3>
                         <h5>{post.category.name}</h5>
                     </div>
-                    <p>{post.body}</p>
+                    <p className='post-body'>{post.body}</p>
                     <div className="post-details">
                         <h4>{post.created_at}</h4>
                         <div className="vl"></div>
-                        <h4>comments</h4>
-                        {showComments && post.id === 1 && <Comments postId={1} postAuthor={'george'} likes={post.likes} dislikes={post.dislikes}/>}
+                        <h4 className="comments-button" onClick={() => setShowComments(post.id)}>comments</h4>
+                        {showComments === post.id && <CommentsBox postId={1} postAuthor={'george'} likes={post.likes} dislikes={post.dislikes} setShowComments={setShowComments}/>}
                     </div>
                     <div className="reactions">
                         <div className="likes">
