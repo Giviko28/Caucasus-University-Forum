@@ -36,7 +36,7 @@ const CommentsBox = ({postId, postAuthor, likes, dislikes, setShowComments}) => 
         <div className="comment-box">
             <div className="comments-container">
                 <div className="header">
-                    <img src={goBack} alt="icon not found" className='go-back-arrow' onClick={() => setInterval('')}/>
+                    <img src={goBack} alt="icon not found" className='go-back-arrow' onClick={() => setShowComments('')}/>
 
                     <div className="post-author">
                         <h2>{postAuthor}'s post</h2>
