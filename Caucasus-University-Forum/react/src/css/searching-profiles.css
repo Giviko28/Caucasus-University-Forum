@@ -5,7 +5,8 @@
   border-radius: 10px;
   box-shadow: 0 5px 30px 0 rgba(0, 0, 0, 0.5), 0 5px 30px 0 rgba(0, 0, 0, 0.5) inset;
   width: 300px;
-  min-height: 320px;
+  min-height: 200px;
+  max-height: 320px;
   display: grid;
   grid-template-rows: 45px auto 45px;
   align-items: center;
@@ -61,6 +62,7 @@
   align-self: center;
   justify-self: center;
   width: 70px;
+  height: 70px;
 }
 .searched-profiles .users-container .user .user-details {
   align-self: center;
