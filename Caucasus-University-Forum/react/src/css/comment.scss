@@ -10,10 +10,10 @@ $light-gray: #F2F2F2;
     background-color: $white;
     box-shadow: 0 5px 30px 0 rgba(0, 0, 0, 0.3);
     border-radius: 10px;
-    height: 75px;
+    // height: 75px;
     width: 600px;
     display: grid;
-    grid-template-columns: 100px 500px;
+    grid-template-columns: 60px 540px;
     grid-template-rows: 25px 50px;
 
     .commenter-info {
@@ -22,29 +22,49 @@ $light-gray: #F2F2F2;
         grid-column-end: 2;
         justify-self: start;
         align-self: center;
-        margin-left: 10px;
         font-size: small;
+        margin-left: 10px;
+        cursor: pointer;
+
+        &:hover {
+            color: $gray;
+        }
+        
+        &:active {
+            transform: scale(0.98);
+        }
+    }
+
+    .comment-timestamp {
+        grid-row: 1;
+        grid-column: 2;
+        justify-self: end;
+        align-self: center;
+        margin-right: 10px;
+        font-size: x-small;
     }
 
     .commenter-photo {
         grid-row: 2;
         grid-column: 1;
-        justify-self: center;
-        align-self: center;
-        height: 50px;
+        justify-self: start;
+        align-self: start;
+        margin-left: 10px;
+        height: 40px;  
+        cursor: pointer;
+        
+        &:active {
+            transform: scale(0.98);
+        }
     }
-
+    
     .comment-body {
         grid-row: 2;
         grid-column: 2;
-        width: 500px;
-        justify-self: start;
-        align-self: start;
         display: -webkit-box;
         overflow: hidden;
         -webkit-box-orient: vertical;
         -webkit-line-clamp: 3;
         word-wrap: break-word;
     }
-    
 }
