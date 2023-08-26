@@ -12,10 +12,11 @@ import DislikeIcon from '../svg/dislike.svg';
 import { useState } from 'react';
 import useFetch from "../hooks/useFetch";
 
-const CommentsBox = ({postId, comments, postAuthor, likes, dislikes, setShowComments}) => {
+const CommentsBox = ({comments, postId, postAuthor, likes, dislikes, setShowComments}) => {
     const {user, isPending} = useStateContext();
     const commentRefs = {};
     const {setMessage} = useFlashContext();
+
     console.log(comments)
     // const {data: comments, isPending, error} = usefetch();
     const comment = (e) => {
