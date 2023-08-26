@@ -37,7 +37,9 @@ const Posts = ({posts}) => {
 
     return (
         <div>
-            {posts.map((post) => (
+            {posts.map((post) => {
+                console.log(`i am comments for post id ${post.id} and my comments are ${post.comments}`);
+                return (
                 <div className="post" key={post.id}>
                     {user && user.id === post.author.id ? <img onClick={() => Delete(post.id)} src={xButton} alt='icon not found' className='x-icon' />: ''}
                     {post.author.profile_picture
@@ -53,7 +55,7 @@ const Posts = ({posts}) => {
                         <h4>{post.created_at}</h4>
                         <div className="vl"></div>
                         <h4 className="comments-button" onClick={() => setShowComments(post.id)}>comments</h4>
-                        {showComments === post.id && <CommentsBox postId={1} postAuthor={'george'} likes={post.likes} dislikes={post.dislikes} setShowComments={setShowComments}/>}
+                        {showComments === post.id && <CommentsBox comments={post.comments} postId={1} postAuthor={'george'} likes={post.likes} dislikes={post.dislikes} setShowComments={setShowComments}/>}
                     </div>
                     <div className="reactions">
                         <div className="likes">
@@ -70,7 +72,7 @@ const Posts = ({posts}) => {
                         </div>
                     </div>
                 </div>
-            ))}
+            )})}
         </div>
     );
 }

@@ -10,18 +10,22 @@ import addImage from '../svg/add-image.svg';
 import LikeIcon from '../svg/like.svg';
 import DislikeIcon from '../svg/dislike.svg';
 import { useState } from 'react';
+import useFetch from "../hooks/useFetch";
 
-const CommentsBox = ({postId, postAuthor, likes, dislikes, setShowComments}) => {
+const CommentsBox = ({postId, comments, postAuthor, likes, dislikes, setShowComments}) => {
     const {user, isPending} = useStateContext();
     const commentRefs = {};
     const {setMessage} = useFlashContext();
+    console.log(comments)
     // const {data: comments, isPending, error} = usefetch();
-
     const comment = (e) => {
         const payload = {body: commentRefs[postId].value};
         if (e.key === 'Enter') {
+            e.preventDefault();
             axiosClient.post(`/post/comment/${postId}`, payload)
                 .then(response => {
+                    commentRefs[postId].value = '';
+                    commentRefs[postId].blur();
                     setMessage(response.data.message)
                 })
                 .catch(error => {
@@ -32,7 +36,7 @@ const CommentsBox = ({postId, postAuthor, likes, dislikes, setShowComments}) => 
         }
     }
 
-    return ( 
+    return (
         <div className="comment-box">
             <div className="comments-container">
                 <div className="header">
@@ -53,8 +57,9 @@ const CommentsBox = ({postId, postAuthor, likes, dislikes, setShowComments}) => 
                         <h4 className="dislike-counter">35</h4>
                     </div>
                 </div>
-                
-                <Comments />
+
+
+                <Comments comments={comments} />
 
                 <div className="write-comment">
                     {user && user.profile_picture
@@ -69,9 +74,9 @@ const CommentsBox = ({postId, postAuthor, likes, dislikes, setShowComments}) => 
                         <button>Comment</button>
                     </div>
                 </div>
-            </div>   
+            </div>
         </div>
      );
 }
- 
+
 export default CommentsBox;

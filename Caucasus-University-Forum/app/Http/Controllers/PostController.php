@@ -74,6 +74,7 @@ class PostController extends Controller
                 'body' => $post->body,
                 'author' => $post->author,
                 'category' => $post->category,
+                'comments' => $post->comments,
                 'created_at' => $post->created_at->diffForHumans()
             ];
         });

@@ -26,4 +26,8 @@ class CommentController extends Controller
             'message' => 'Comment submitted'
         ], 200);
     }
+//    public function show(Post $post)
+//    {
+//        return Comment::where('post_id', '=', $post->id);
+//    }
 }

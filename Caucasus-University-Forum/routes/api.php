@@ -26,8 +26,8 @@ Route::middleware('auth:sanctum')->group(function () {
         return $request->user();
     });
     Route::post('/post', [PostController::class, 'create']);
-    Route::post('/logout', [AuthController::class, 'logout']);
     Route::post('/post/delete/{post}', [PostController::class, 'delete']);
+    Route::post('/logout', [AuthController::class, 'logout']);
     Route::post('/post/comment/{post}', [CommentController::class, 'create']);
     Route::post('/profile/uploadImage', [ProfileController::class, 'updatePicture']);
 });
@@ -39,6 +39,7 @@ Route::post('/login', [AuthController::class, 'login']);
 Route::get('/users',[UserController::class, 'getUsers']);
 
 Route::get('/posts', [PostController::class, 'show']);
+
 Route::get('/categories', function() {
     return Category::all();
 });
