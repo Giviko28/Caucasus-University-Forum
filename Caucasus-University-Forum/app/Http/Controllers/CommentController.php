@@ -28,6 +28,16 @@ class CommentController extends Controller
     }
     public function show(Post $post)
     {
-        return Comment::where('post_id', '=', $post->id)->get();
+        $comments = Comment::where('post_id', '=', $post->id)->get();
+        return $comments->map(function ($comment) {
+            return [
+                'id' => $comment->id,
+                'body' => $comment->body,
+                'user_id' => $comment->user_id,
+                'author' => $comment->author,
+                'post_id' => $comment->post_id,
+                'created_at' => $comment->created_at->diffForHumans()
+            ];
+        });
     }
 }
