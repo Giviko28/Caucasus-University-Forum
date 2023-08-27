@@ -39,7 +39,7 @@ Route::post('/login', [AuthController::class, 'login']);
 Route::get('/users',[UserController::class, 'getUsers']);
 
 Route::get('/posts', [PostController::class, 'show']);
-
+Route::get('/post/{post}/comments', [CommentController::class, 'show']);
 Route::get('/categories', function() {
     return Category::all();
 });

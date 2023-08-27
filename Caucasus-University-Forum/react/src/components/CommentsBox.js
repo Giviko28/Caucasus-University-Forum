@@ -9,21 +9,40 @@ import goBack from '../svg/go-back-arrow.svg';
 import addImage from '../svg/add-image.svg';
 import LikeIcon from '../svg/like.svg';
 import DislikeIcon from '../svg/dislike.svg';
-import { useState } from 'react';
+import {useEffect, useState} from 'react';
 import useFetch from "../hooks/useFetch";
 
 const CommentsBox = ({post, setShowComments}) => {
     const {user, isPending} = useStateContext();
     const commentRefs = {};
     const {setMessage} = useFlashContext();
+    //isPending amovige ukve arsebobda
+    // const {data: comments,error} = useFetch(`post/${post.id}/comments`);
+    const [comments, setComments] = useState([]);
+    const [shouldRefetch, setShouldRefetch] = useState(false);
 
-    // const {data: comments, isPending, error} = usefetch();
+    const fetchComments = () => {
+        axiosClient.get(`post/${post.id}/comments`)
+            .then(response => {
+                setComments(response.data);
+                setShouldRefetch(false);
+            })
+            .catch(error => {
+                console.error("Error fetching comments:", error);
+                setShouldRefetch(false);
+            });
+    };
+
+    useEffect(() => {
+        fetchComments();
+    }, [post.id, shouldRefetch]);
     const comment = (e) => {
         const payload = {body: commentRefs[post.id].value};
         if (e.key === 'Enter') {
             e.preventDefault();
             axiosClient.post(`/post/comment/${post.id}`, payload)
                 .then(response => {
+                    setShouldRefetch(true);
                     commentRefs[post.id].value = '';
                     commentRefs[post.id].blur();
                     setMessage(response.data.message)
@@ -59,7 +78,7 @@ const CommentsBox = ({post, setShowComments}) => {
                 </div>
 
 
-                <Comments comments={post.comments} />
+                <Comments comments={comments} />
 
                 <div className="write-comment">
                     {user && user.profile_picture
