@@ -10,6 +10,7 @@
       <sourceFolder url="file://$MODULE_DIR$/Caucasus-University-Forum/tests/Unit" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/spec" isTestSource="true" />
       <sourceFolder url="file://$MODULE_DIR$/tests" isTestSource="true" />
+      <sourceFolder url="file://$MODULE_DIR$/Caucasus-University-Forum/spec" isTestSource="true" />
       <excludeFolder url="file://$MODULE_DIR$/Caucasus-University-Forum/vendor/brick/math" />
       <excludeFolder url="file://$MODULE_DIR$/Caucasus-University-Forum/vendor/composer" />
       <excludeFolder url="file://$MODULE_DIR$/Caucasus-University-Forum/vendor/dflydev/dot-access-data" />
@@ -124,6 +125,9 @@
       <excludeFolder url="file://$MODULE_DIR$/Caucasus-University-Forum/vendor/voku/portable-ascii" />
       <excludeFolder url="file://$MODULE_DIR$/Caucasus-University-Forum/vendor/webmozart/assert" />
       <excludeFolder url="file://$MODULE_DIR$/Caucasus-University-Forum/vendor/itsgoingd/clockwork" />
+      <excludeFolder url="file://$MODULE_DIR$/Caucasus-University-Forum/storage/app" />
+      <excludeFolder url="file://$MODULE_DIR$/Caucasus-University-Forum/storage/clockwork" />
+      <excludeFolder url="file://$MODULE_DIR$/Caucasus-University-Forum/storage/framework" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

@@ -10,7 +10,7 @@ const Timeline = ({filterSchool, searchQuery, isSearched}) => {
         category: filterSchool,
         keyword: searchQuery
     };
-    const { data: posts, isPending, error } = useFetch('/posts', payload);
+    const { data: posts, isPending, error} = useFetch('/posts', payload);
 
     return (
         <div className="timeline">

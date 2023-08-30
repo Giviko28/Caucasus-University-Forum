@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="database" uuid="200120a9-ad35-4fc2-a73e-fc33a8590c84">
+    <data-source source="LOCAL" name="database" uuid="9ddb1460-80c2-47b8-9c39-140bff385255">
       <driver-ref>sqlite.xerial</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
-      <jdbc-url>jdbc:sqlite:C:\Users\cheli\OneDrive\Documents\GitHub\Caucasus-University-Forum\Caucasus-University-Forum\database\database.sqlite</jdbc-url>
+      <jdbc-url>jdbc:sqlite:C:\Users\Giviko\PhpstormProjects\Caucasus-University-Forum\Caucasus-University-Forum\database\database.sqlite</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
       <libraries>
         <library>
