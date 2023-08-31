@@ -14,7 +14,7 @@ const SearchingProfiles = ({searchQuery}) => {
                 <div className="users-container">
                     {isPending && <LoadingSearchedUsers />}
                     {error && {error}}
-                    {!isPending && users && users.map((user, index) =>(
+                    {!isPending && users && users.slice(0, 2).map((user, index) =>(
                     <div className='user' key={index}>
                         <img src={user.profile_picture ? backendBaseUrl + user.profile_picture : ProfilePhoto} alt="photo not found" />
                         <div className="user-details">
