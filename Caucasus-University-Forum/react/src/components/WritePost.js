@@ -45,7 +45,7 @@ const WritePost = () => {
                 bodyRef.current.blur();
                 bodyRef.current.value = '';
                 setMessage(response.data.message);
-                setSelectedImages([]); // Clear selected images after publishing
+                setSelectedImages([]); 
             })
             .catch(error => {
                 if (error.response.status === 401) {
