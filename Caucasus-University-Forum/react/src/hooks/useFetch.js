@@ -12,7 +12,6 @@ const useFetch = (url, filter) => {
     }
 
     useEffect(() => {
-        if (filter) {setData(null); setIsPending(true)}
             axiosClient.get(url)
             .then(response => {
                 setData(response.data);
