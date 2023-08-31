@@ -74,6 +74,8 @@ class PostController extends Controller
                 'body' => $post->body,
                 'author' => $post->author,
                 'category' => $post->category,
+                'likes' => $post->totalLikes(),
+                'dislikes' => $post->totalDislikes(),
 //                'comments' => $post->comments,
                 'created_at' => $post->created_at->diffForHumans()
             ];

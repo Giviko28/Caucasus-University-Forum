@@ -38,7 +38,6 @@ const Posts = ({posts}) => {
     return (
         <div>
             {posts.map((post) => {
-                console.log(`i am comments for post id ${post.id} and my comments are ${post.comments}`);
                 return (
                 <div className="post" key={post.id}>
                     {user && user.id === post.author.id ? <img onClick={() => Delete(post.id)} src={xButton} alt='icon not found' className='x-icon' />: ''}
@@ -59,7 +58,7 @@ const Posts = ({posts}) => {
                     </div>
                     <div className="reactions">
                         <div className="likes">
-                            <h4 className="counter">28</h4>
+                            <h4 className="counter">{post.likes}</h4>
                             <button>
                                 <img src={LikeIcon} alt="icon not available" />
                             </button>
@@ -68,7 +67,7 @@ const Posts = ({posts}) => {
                             <button>
                                 <img src={DislikeIcon} alt="icon not available" />
                             </button>
-                            <h4 className="counter">17</h4>
+                            <h4 className="counter">{post.dislikes}</h4>
                         </div>
                     </div>
                 </div>

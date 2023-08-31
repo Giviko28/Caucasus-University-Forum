@@ -39,4 +39,16 @@ class Post extends Model
     {
         return $this->hasMany(Comment::class);
     }
+    public function likes()
+    {
+        return $this->hasMany(Like::class);
+    }
+    public function totalLikes()
+    {
+        return $this->likes()->where('is_like', 1)->count();
+    }
+    public function totalDislikes()
+    {
+        return $this->likes()->where('is_like', 0)->count();
+    }
 }
