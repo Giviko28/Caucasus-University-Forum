@@ -11,7 +11,6 @@ const Timeline = ({filterSchool, searchQuery, isSearched}) => {
         keyword: searchQuery
     };
     const { data: posts, isPending, error} = useFetch('/posts', payload);
-
     return (
         <div className="timeline">
             {!isSearched && <WritePost />}
@@ -29,7 +28,7 @@ const Timeline = ({filterSchool, searchQuery, isSearched}) => {
                 <LoadingPosts key={index} />
             ))}
             {error && <div> {error} </div> }
-            {posts && <Posts posts={posts} />}
+            {posts && <Posts posts={posts.data} />}
         </div>
     );
 }

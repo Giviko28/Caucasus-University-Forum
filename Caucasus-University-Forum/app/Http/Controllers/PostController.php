@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\PostResourceCollection;
 use App\Models\Image;
 use App\Models\Post;
 use Illuminate\Auth\AuthenticationException;
@@ -68,18 +69,19 @@ class PostController extends Controller
     public function show()
     {
         $posts = Post::query()->latest()->filter(request(['category', 'keyword']))->get();
-        return $posts->map(function ($post) {
-            return [
-                'id' => $post->id,
-                'body' => $post->body,
-                'author' => $post->author,
-                'category' => $post->category,
-                'likes' => $post->totalLikes(),
-                'dislikes' => $post->totalDislikes(),
-//                'comments' => $post->comments,
-                'created_at' => $post->created_at->diffForHumans()
-            ];
-        });
+        return new PostResourceCollection($posts);
+//        return $posts->map(function ($post) {
+//            return [
+//                'id' => $post->id,
+//                'body' => $post->body,
+//                'author' => $post->author,
+//                'category' => $post->category,
+//                'likes' => $post->totalLikes(),
+//                'dislikes' => $post->totalDislikes(),
+////                'comments' => $post->comments,
+//                'created_at' => $post->created_at->diffForHumans()
+//            ];
+//        });
     }
 
 }
