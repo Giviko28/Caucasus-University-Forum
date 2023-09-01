@@ -15,6 +15,8 @@ const Home = () => {
     const [isSearched, setIsSearched] = useState(false);
     const [filterSchool, setFilterSchool] = useState(null);
     const [searchQuery, setSearchQuery] = useState(null);
+
+
     useEffect(() => {
         document.body.className = 'home-body';
     }, []);

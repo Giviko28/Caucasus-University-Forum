@@ -68,7 +68,7 @@ class PostController extends Controller
     }
     public function show()
     {
-        $posts = Post::query()->latest()->filter(request(['category', 'keyword']))->get();
+        $posts = Post::query()->latest()->filter(request(['category', 'keyword']))->paginate(10);
         return new PostResourceCollection($posts);
 //        return $posts->map(function ($post) {
 //            return [

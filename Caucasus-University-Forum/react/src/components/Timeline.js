@@ -4,13 +4,45 @@ import useFetch from '../hooks/useFetch';
 import LoadingPosts from "./loading-components/LoadingPosts";
 import SearchingProfiles from "./SearchingProfiles";
 import SearchingClubs from "./SearchingClubs";
+import Pagination from "./Pagination";
+import axiosClient from "./axios-client";
+import {useEffect, useState} from "react";
 
 const Timeline = ({filterSchool, searchQuery, isSearched}) => {
-    const payload = {
-        category: filterSchool,
-        keyword: searchQuery
-    };
-    const { data: posts, isPending, error} = useFetch('/posts', payload);
+    // const payload = {
+    //     category: filterSchool,
+    //     keyword: searchQuery
+    // };
+
+    const [currentPage, setCurrentPage] = useState(1);
+    const [totalPages, setTotalPages] = useState(1);
+
+    const [posts, setPosts] = useState([]);
+    const [isPending, setIsPending] = useState(true);
+    const [error, setError] = useState(null);
+
+    // const {data: posts, isPending, error} = useFetch('/posts', payload);
+    useEffect(() => {
+        if (filterSchool || searchQuery || currentPage) {
+            setPosts(null);
+            setIsPending(true);
+        }
+        axiosClient.get(`/posts?category=${filterSchool ?? ''}&keyword=${searchQuery ?? ''}&page=${currentPage}`)
+            .then(response => {
+                setPosts(response.data.data);
+                setTotalPages(response.data.meta.last_page);
+                setIsPending(false);
+            })
+            .catch(error => {
+                setError(error.message);
+                setIsPending(false);
+            });
+    }, [currentPage, filterSchool, searchQuery]);
+
+    const handlePageChange = (page) => {
+        setCurrentPage(page);
+    }
+
     return (
         <div className="timeline">
             {!isSearched && <WritePost />}
@@ -28,7 +60,8 @@ const Timeline = ({filterSchool, searchQuery, isSearched}) => {
                 <LoadingPosts key={index} />
             ))}
             {error && <div> {error} </div> }
-            {posts && <Posts posts={posts.data} />}
+            {posts && <Posts posts={posts} />}
+            <Pagination currentPage={currentPage} totalPages={totalPages} onPageChange={handlePageChange} />
         </div>
     );
 }

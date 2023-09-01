@@ -23,6 +23,6 @@ class DatabaseSeeder extends Seeder
                 'id' => $index+1
             ]);
         }
-        Post::factory(10)->create();
+        Post::factory(100)->create();
     }
 }
