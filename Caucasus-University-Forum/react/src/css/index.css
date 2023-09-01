@@ -21,6 +21,50 @@
   justify-items: center;
   align-items: center;
 }
+@keyframes sticky-navbar {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+.main .sticky-navbar {
+  animation: sticky-navbar 0.5s ease 1;
+  position: fixed;
+  top: 0;
+  background-color: #F2F2F2;
+  width: 550px;
+  height: 65px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0 0 15px 15px;
+  box-shadow: 0 5px 30px 0 rgba(0, 0, 0, 0.3);
+}
+.main .sticky-navbar .sticky-navbar-buttons {
+  display: flex;
+  justify-content: space-around;
+  width: 500px;
+}
+.main .sticky-navbar .sticky-navbar-buttons button {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  color: #000000;
+  font-size: 24px;
+  width: 100px;
+  height: 40px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+.main .sticky-navbar .sticky-navbar-buttons button:hover {
+  background-color: #A9EF9A;
+}
+.main .sticky-navbar .sticky-navbar-buttons button:active {
+  transform: scale(0.95);
+}
 .main .profile-icon {
   grid-row: 1;
   grid-column: 1;

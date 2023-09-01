@@ -10,7 +10,7 @@ const useFetch = (url, filter) => {
     if (filter) {
         url = url + `?${queryString.stringify(filter)}`;
     }
-
+    
     useEffect(() => {
             if(filter){
                 setData(null);
