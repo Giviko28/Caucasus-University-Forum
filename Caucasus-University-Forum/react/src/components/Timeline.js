@@ -16,10 +16,11 @@ const Timeline = ({filterSchool, searchQuery, isSearched}) => {
 
     const [currentPage, setCurrentPage] = useState(1);
     const [totalPages, setTotalPages] = useState(1);
-
     const [posts, setPosts] = useState([]);
     const [isPending, setIsPending] = useState(true);
     const [error, setError] = useState(null);
+    const [published, setPublished] = useState(false);
+
 
     // const {data: posts, isPending, error} = useFetch('/posts', payload);
     useEffect(() => {
@@ -45,17 +46,26 @@ const Timeline = ({filterSchool, searchQuery, isSearched}) => {
 
     return (
         <div className="timeline">
-            {!isSearched && <WritePost />}
-            {isSearched && <nav className="searching-navbar">
-                <button>All</button>
-                <button>Profiles</button>
-                <button>Clubs</button>
-                <button>Posts</button>
-            </nav>}
-            {isSearched && <div className="searched-users-and-clubs">
-                <SearchingProfiles searchQuery={searchQuery}/>
-                <SearchingClubs />
-            </div>}
+            {!isSearched && <WritePost setPublished={setPublished}/>}
+            {!isSearched && published && posts && 
+                <div className="new-post" style={published? {opacity: '75%'}: {}}>
+                    <Posts posts={posts.slice(0, 1)} />
+                </div>
+            }
+            {isSearched && 
+                <nav className="searching-navbar">
+                    <button>All</button>
+                    <button>Profiles</button>
+                    <button>Clubs</button>
+                    <button>Posts</button>
+                </nav>
+            }
+            {isSearched && 
+                <div className="searched-users-and-clubs">
+                    <SearchingProfiles searchQuery={searchQuery}/>
+                    <SearchingClubs />
+                </div>
+            }
             {isPending && Array.from({ length: 2 }).map((_, index) => (
                 <LoadingPosts key={index} />
             ))}

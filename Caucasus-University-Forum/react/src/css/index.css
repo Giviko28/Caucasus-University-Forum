@@ -30,6 +30,7 @@
   }
 }
 .main .sticky-navbar {
+  z-index: 10;
   animation: sticky-navbar 0.5s ease 1;
   position: fixed;
   top: 0;
@@ -217,6 +218,18 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+@keyframes published {
+  0% {
+    transform: scale(0.7) translateY(-50%);
+  }
+  100% {
+    transform: scale(1) translateY(0%);
+  }
+}
+.main .timeline .new-post {
+  z-index: 4;
+  animation: published 0.8s ease;
 }
 .main .timeline .searching-navbar {
   align-self: flex-start;

@@ -9,7 +9,7 @@ import LoadingWritePost from './loading-components/LoadingWritePost';
 import { backendBaseUrl } from "../config";
 import { useFlashContext } from "../contexts/FlashContext";
 
-const WritePost = () => {
+const WritePost = ({setPublished}) => {
     const { user, isPending } = useStateContext();
     const { setMessage } = useFlashContext();
     const bodyRef = useRef();
@@ -35,11 +35,13 @@ const WritePost = () => {
     };
 
     const publish = (ev) => {
+        setPublished(true);
         ev.preventDefault();
         const payload = {
             body: bodyRef.current.value,
             images: selectedImages
         };
+        console.log(bodyRef);
         axiosClient.postForm('/post', payload)
             .then(response => {
                 bodyRef.current.blur();
