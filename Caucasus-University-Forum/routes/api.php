@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CommentController;
+use App\Http\Controllers\LikeController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UserController;
@@ -29,6 +30,10 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::post('/post/delete/{post}', [PostController::class, 'delete']);
     Route::post('/logout', [AuthController::class, 'logout']);
     Route::post('/post/comment/{post}', [CommentController::class, 'create']);
+    Route::post('/post/like/{post}', [LikeController::class, 'like']);
+    Route::post('/post/dislike/{post}', [LikeController::class, 'dislike']);
+
+
     Route::post('/profile/uploadImage', [ProfileController::class, 'updatePicture']);
 });
 

@@ -34,7 +34,24 @@ const Posts = ({posts}) => {
                 }
             })
     }
-
+    const Like = (id) => {
+        axiosClient.post(`/post/like/${id}`)
+            .then(response => {
+                setMessage(response.data.message);
+            })
+            .catch(error => {
+                setMessage(error);
+            })
+    }
+    const Dislike = (id) => {
+        axiosClient.post(`/post/dislike/${id}`)
+            .then(response => {
+                setMessage(response.data.message);
+            })
+            .catch(error => {
+                setMessage(error);
+            })
+    }
     return (
         <div>
             {posts.map((post) => {
@@ -59,12 +76,12 @@ const Posts = ({posts}) => {
                     <div className="reactions">
                         <div className="likes">
                             <h4 className="counter">{post.likes}</h4>
-                            <button>
+                            <button onClick={() => Like(post.id)}>
                                 <img src={LikeIcon} alt="icon not available" />
                             </button>
                         </div>
                         <div className="dislikes">
-                            <button>
+                            <button onClick={() => Dislike(post.id)}>
                                 <img src={DislikeIcon} alt="icon not available" />
                             </button>
                             <h4 className="counter">{post.dislikes}</h4>

@@ -19,7 +19,7 @@ const WritePost = () => {
 
     const handleEnter = (e) => {
         if (e.key === 'Enter') {
-            e.preventDefault();
+            // e.preventDefault();
             // btnRef.current.click(); // Enter-is dacheris dros daipostos posti
         }
     }
@@ -45,7 +45,7 @@ const WritePost = () => {
                 bodyRef.current.blur();
                 bodyRef.current.value = '';
                 setMessage(response.data.message);
-                setSelectedImages([]); 
+                setSelectedImages([]);
             })
             .catch(error => {
                 if (error.response.status === 401) {
@@ -79,7 +79,7 @@ const WritePost = () => {
             <label htmlFor="images" className='label-add-image'><img src={AddImage} alt="icon not available" className="add-image" /></label>
             <input ref={imagesRef} style={{ display: 'none' }} name='images' id='images' type="file" multiple onChange={handleImageSelection} />
 
-            {selectedImages.length > 0 && 
+            {selectedImages.length > 0 &&
                 <div className="selected-images">
                     {selectedImages.slice(0, 5).map((image, index) => (
                         <div className="selected-image-container">
@@ -89,7 +89,7 @@ const WritePost = () => {
                     ))}
                 </div>
             }
-                
+
 
             <button ref={btnRef} onClick={publish}>Publish</button>
         </div>
