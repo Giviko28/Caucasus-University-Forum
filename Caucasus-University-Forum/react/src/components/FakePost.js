@@ -11,6 +11,7 @@ import {useState} from "react";
 
 
 const FakePost = ({post}) => {
+    // Eseni shemosatania timeline-idan es prosta vtestavdi da dro ar mindoda damexarja da aq davtove
     const {user} = useStateContext();
     const [showComments, setShowComments] = useState('');
     const {setMessage} = useFlashContext();

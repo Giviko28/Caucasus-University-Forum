@@ -14,7 +14,6 @@ $gray: #7C7C7C;
     display: grid;
     grid-template-columns: 1fr  1fr;
     grid-template-rows: 1fr 2fr 1fr;
-    z-index: 5;
 
     .user-information {
         align-self: start;
@@ -66,7 +65,7 @@ $gray: #7C7C7C;
     }
 
     textarea {
-        padding: 8px; 
+        padding: 8px;
         resize: none;
         background-color: #EFEEEE;
         grid-row: 2;
@@ -82,7 +81,7 @@ $gray: #7C7C7C;
         &:focus {
             outline: solid 2px $black;
         }
-    }  
+    }
 
     .label-add-image{
         height: 30px;
@@ -92,7 +91,7 @@ $gray: #7C7C7C;
         justify-self: start;
         align-self: center;
         margin: 0px 0px 15px 20px;
-        
+
     }
 
     .add-image {
@@ -150,7 +149,7 @@ $gray: #7C7C7C;
 
             &:hover {
                 transform: translateY(-10%);
-                
+
                 .delete-icon {
                     display: block;
                 }
@@ -162,7 +161,7 @@ $gray: #7C7C7C;
 
         }
     }
-    
+
     button {
         background-color: $green;
         border: none;

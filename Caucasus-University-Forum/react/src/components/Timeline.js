@@ -56,7 +56,7 @@ const Timeline = ({filterSchool, searchQuery, isSearched}) => {
                     <FakePost post={fakePost} />
                 </div>
             }
-            {fakePosts && <Posts posts={fakePosts} />}
+            {fakePosts && <Posts posts={fakePosts.slice().reverse()} />}
             {isSearched &&
                 <nav className="searching-navbar">
                     <button>All</button>

@@ -66,9 +66,9 @@ const WritePost = ({setPublished, fakePost, setFakePost, fakePosts, setFakePosts
                 setSelectedImages([]);
                 setPublished(false);
                 setFakePosts(prevFakePosts => [...prevFakePosts, response.data.data]);
-
             })
             .catch(error => {
+                setPublished(false);
                 if (error.response.status === 401) {
                     setMessage('Please login');
                 }
