@@ -9,7 +9,7 @@ import LoadingWritePost from './loading-components/LoadingWritePost';
 import { backendBaseUrl } from "../config";
 import { useFlashContext } from "../contexts/FlashContext";
 
-const WritePost = ({setPublished}) => {
+const WritePost = ({setPublished, fakePost, setFakePost}) => {
     const { user, isPending } = useStateContext();
     const { setMessage } = useFlashContext();
     const bodyRef = useRef();
@@ -36,14 +36,28 @@ const WritePost = ({setPublished}) => {
 
     const publish = (ev) => {
         setPublished(true);
+        setFakePost({
+            author: {
+                profile_picture: user.profile_picture ?? null,
+                name: user.name ?? null,
+            },
+            category: {
+                name: null,
+            },
+            body: null,
+            created_at: null,
+            likes: null,
+            dislikes: null,
+            id: 'fakePost',
+        });
         ev.preventDefault();
         const payload = {
             body: bodyRef.current.value,
             images: selectedImages
         };
-        console.log(bodyRef);
         axiosClient.postForm('/post', payload)
             .then(response => {
+                setFakePost(response.data.data);
                 bodyRef.current.blur();
                 bodyRef.current.value = '';
                 setMessage(response.data.message);

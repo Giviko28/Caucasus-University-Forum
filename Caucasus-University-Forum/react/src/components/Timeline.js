@@ -7,6 +7,7 @@ import SearchingClubs from "./SearchingClubs";
 import Pagination from "./Pagination";
 import axiosClient from "./axios-client";
 import {useEffect, useState} from "react";
+import FakePost from "./FakePost";
 
 const Timeline = ({filterSchool, searchQuery, isSearched}) => {
     // const payload = {
@@ -14,14 +15,14 @@ const Timeline = ({filterSchool, searchQuery, isSearched}) => {
     //     keyword: searchQuery
     // };
 
+
     const [currentPage, setCurrentPage] = useState(1);
     const [totalPages, setTotalPages] = useState(1);
     const [posts, setPosts] = useState([]);
     const [isPending, setIsPending] = useState(true);
     const [error, setError] = useState(null);
     const [published, setPublished] = useState(false);
-
-
+    const [fakePost, setFakePost] = useState({});
     // const {data: posts, isPending, error} = useFetch('/posts', payload);
     useEffect(() => {
         if (filterSchool || searchQuery || currentPage) {
@@ -46,13 +47,13 @@ const Timeline = ({filterSchool, searchQuery, isSearched}) => {
 
     return (
         <div className="timeline">
-            {!isSearched && <WritePost setPublished={setPublished}/>}
-            {!isSearched && published && posts && 
+            {!isSearched && <WritePost setFakePost={setFakePost} fakePost={fakePost} setPublished={setPublished}/>}
+            {!isSearched && published && posts &&
                 <div className="new-post" style={published? {opacity: '75%'}: {}}>
-                    <Posts posts={posts.slice(0, 1)} />
+                    <FakePost post={fakePost} />
                 </div>
             }
-            {isSearched && 
+            {isSearched &&
                 <nav className="searching-navbar">
                     <button>All</button>
                     <button>Profiles</button>
@@ -60,7 +61,7 @@ const Timeline = ({filterSchool, searchQuery, isSearched}) => {
                     <button>Posts</button>
                 </nav>
             }
-            {isSearched && 
+            {isSearched &&
                 <div className="searched-users-and-clubs">
                     <SearchingProfiles searchQuery={searchQuery}/>
                     <SearchingClubs />

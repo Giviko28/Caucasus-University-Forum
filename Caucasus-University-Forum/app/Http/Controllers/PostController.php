@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Resources\PostResource;
 use App\Http\Resources\PostResourceCollection;
 use App\Models\Image;
 use App\Models\Post;
 use Illuminate\Auth\AuthenticationException;
 use Illuminate\Cache\RateLimiter;
 use Illuminate\Http\Request;
+use Illuminate\Http\Resources\Json\ResourceCollection;
 use Ramsey\Uuid\Exception\UnableToBuildUuidException;
 
 class PostController extends Controller
@@ -41,7 +43,8 @@ class PostController extends Controller
         }
 
         return response([
-            'message' => 'Your post has been published'
+            'message' => 'Your post has been published',
+            'data' => new PostResource($post)
         ], 201);
 
     }
