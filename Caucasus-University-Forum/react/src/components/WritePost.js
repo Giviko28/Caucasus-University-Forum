@@ -9,7 +9,7 @@ import LoadingWritePost from './loading-components/LoadingWritePost';
 import { backendBaseUrl } from "../config";
 import { useFlashContext } from "../contexts/FlashContext";
 
-const WritePost = ({setPublished, fakePost, setFakePost}) => {
+const WritePost = ({setPublished, fakePost, setFakePost, fakePosts, setFakePosts}) => {
     const { user, isPending } = useStateContext();
     const { setMessage } = useFlashContext();
     const bodyRef = useRef();
@@ -35,21 +35,23 @@ const WritePost = ({setPublished, fakePost, setFakePost}) => {
     };
 
     const publish = (ev) => {
-        setPublished(true);
-        setFakePost({
-            author: {
-                profile_picture: user.profile_picture ?? null,
-                name: user.name ?? null,
-            },
-            category: {
-                name: null,
-            },
-            body: null,
-            created_at: null,
-            likes: null,
-            dislikes: null,
-            id: 'fakePost',
-        });
+        if (user) {
+            setPublished(true);
+            setFakePost({
+                author: {
+                    profile_picture: user.profile_picture ?? null,
+                    name: user.name ?? null,
+                },
+                category: {
+                    name: user.category ?? null,
+                },
+                body: bodyRef.current.value,
+                created_at: "now",
+                likes: "0",
+                dislikes: "0",
+                id: 'fakePost',
+            })
+        }
         ev.preventDefault();
         const payload = {
             body: bodyRef.current.value,
@@ -62,6 +64,9 @@ const WritePost = ({setPublished, fakePost, setFakePost}) => {
                 bodyRef.current.value = '';
                 setMessage(response.data.message);
                 setSelectedImages([]);
+                setPublished(false);
+                setFakePosts(prevFakePosts => [...prevFakePosts, response.data.data]);
+
             })
             .catch(error => {
                 if (error.response.status === 401) {

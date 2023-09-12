@@ -23,10 +23,13 @@ const Timeline = ({filterSchool, searchQuery, isSearched}) => {
     const [error, setError] = useState(null);
     const [published, setPublished] = useState(false);
     const [fakePost, setFakePost] = useState({});
+    const [fakePosts, setFakePosts] = useState([]);
     // const {data: posts, isPending, error} = useFetch('/posts', payload);
     useEffect(() => {
+        console.log(fakePosts);
         if (filterSchool || searchQuery || currentPage) {
             setPosts(null);
+            setFakePosts([]);
             setIsPending(true);
         }
         axiosClient.get(`/posts?category=${filterSchool ?? ''}&keyword=${searchQuery ?? ''}&page=${currentPage}`)
@@ -47,12 +50,13 @@ const Timeline = ({filterSchool, searchQuery, isSearched}) => {
 
     return (
         <div className="timeline">
-            {!isSearched && <WritePost setFakePost={setFakePost} fakePost={fakePost} setPublished={setPublished}/>}
+            {!isSearched && <WritePost fakePosts={fakePosts} setFakePosts={setFakePosts} setFakePost={setFakePost} fakePost={fakePost} setPublished={setPublished}/>}
             {!isSearched && published && posts &&
                 <div className="new-post" style={published? {opacity: '75%'}: {}}>
                     <FakePost post={fakePost} />
                 </div>
             }
+            {fakePosts && <Posts posts={fakePosts} />}
             {isSearched &&
                 <nav className="searching-navbar">
                     <button>All</button>

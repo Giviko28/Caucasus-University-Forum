@@ -15,7 +15,7 @@ const Posts = ({posts}) => {
     const {user} = useStateContext();
     return (
         <div>
-            {posts.map((post) => {
+            {posts && posts.map((post) => {
                 return (
                     <Post post={post} />
                 // <div className="post" key={post.id}>
