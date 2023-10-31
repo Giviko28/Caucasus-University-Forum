@@ -28,7 +28,7 @@ class AuthController extends Controller
             'user' => $user,
             'token' => $token,
             'message' => 'Welcome back ' . $user->name
-        ]);
+        ], 200);
     }
     public function signup(Request $request)
     {
