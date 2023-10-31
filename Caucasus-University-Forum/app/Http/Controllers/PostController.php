@@ -4,18 +4,24 @@ namespace App\Http\Controllers;
 
 use App\Http\Resources\PostResource;
 use App\Http\Resources\PostResourceCollection;
+use App\Mail\TestMail;
 use App\Models\Image;
 use App\Models\Post;
+use Exception;
 use Illuminate\Auth\AuthenticationException;
 use Illuminate\Cache\RateLimiter;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\ResourceCollection;
+use Illuminate\Support\Facades\Mail;
+use PHPUnit\Util\Test;
 use Ramsey\Uuid\Exception\UnableToBuildUuidException;
 
 class PostController extends Controller
 {
     public function create(Request $request)
     {
+//test        Mail::to("chelidze.givia@gmail.com")->send(new TestMail());
+
         $this->authorize('create', Post::class);
 
         $user = $request->user();
