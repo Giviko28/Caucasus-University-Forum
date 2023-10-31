@@ -23,15 +23,26 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::middleware('auth:sanctum')->group(function () {
+
+    Route::group(['prefix' => '/post'], function() {
+        Route::post('', [PostController::class, 'create']);
+        Route::delete('/{post}', [PostController::class, 'delete']);
+        Route::post('/like/{post}', [LikeController::class, 'like']);
+        Route::post('/dislike/{post}', [LikeController::class, 'dislike']);
+    });
+
+    Route::get('/comments/{post}', [CommentController::class, 'show']);
+    Route::post('/comment/{post}', [CommentController::class, 'create']);
+
     Route::get('/user', function (Request $request) {
         return $request->user();
     });
-    Route::post('/post', [PostController::class, 'create']);
-    Route::post('/post/delete/{post}', [PostController::class, 'delete']);
-    Route::post('/logout', [AuthController::class, 'logout']);
-    Route::post('/post/comment/{post}', [CommentController::class, 'create']);
-    Route::post('/post/like/{post}', [LikeController::class, 'like']);
-    Route::post('/post/dislike/{post}', [LikeController::class, 'dislike']);
+//    Route::post('/post', [PostController::class, 'create']);
+//    Route::post('/post/delete/{post}', [PostController::class, 'delete']);
+//    Route::post('/logout', [AuthController::class, 'logout']);
+//    Route::post('/post/comment/{post}', [CommentController::class, 'create']);
+//    Route::post('/post/like/{post}', [LikeController::class, 'like']);
+//    Route::post('/post/dislike/{post}', [LikeController::class, 'dislike']);
 
 
     Route::post('/profile/uploadImage', [ProfileController::class, 'updatePicture']);
@@ -44,7 +55,7 @@ Route::post('/login', [AuthController::class, 'login']);
 Route::get('/users',[UserController::class, 'getUsers']);
 
 Route::get('/posts', [PostController::class, 'show']);
-Route::get('/post/{post}/comments', [CommentController::class, 'show']);
+//Route::get('/post/{post}/comments', [CommentController::class, 'show']);
 Route::get('/categories', function() {
     return Category::all();
 });

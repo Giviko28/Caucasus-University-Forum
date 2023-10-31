@@ -16,7 +16,7 @@ const Post = ({post}) => {
     const Delete = (id) => {
         // ev.preventDefault();
         // const payload = {id: id}
-        axiosClient.post(`/post/delete/${id}`)
+        axiosClient.delete(`/post/${id}`)
             .then(response => {
                 console.log(response);
                 if (response.status === 200) {

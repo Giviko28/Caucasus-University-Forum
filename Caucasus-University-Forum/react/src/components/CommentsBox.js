@@ -22,7 +22,7 @@ const CommentsBox = ({post, setShowComments}) => {
     const [shouldRefetch, setShouldRefetch] = useState(false);
 
     const fetchComments = () => {
-        axiosClient.get(`post/${post.id}/comments`)
+        axiosClient.get(`/comments/${post.id}`)
             .then(response => {
                 setComments(response.data);
                 setShouldRefetch(false);
@@ -40,7 +40,7 @@ const CommentsBox = ({post, setShowComments}) => {
         const payload = {body: commentRefs[post.id].value};
         if (e.key === 'Enter') {
             e.preventDefault();
-            axiosClient.post(`/post/comment/${post.id}`, payload)
+            axiosClient.post(`comment/${post.id}`, payload)
                 .then(response => {
                     setShouldRefetch(true);
                     commentRefs[post.id].value = '';
