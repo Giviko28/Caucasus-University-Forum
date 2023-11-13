@@ -17,6 +17,8 @@ class PostResource extends JsonResource
             'category' => $this->category,
             'likes' => $this->totalLikes(),
             'dislikes' => $this->totalDislikes(),
+            'allUsers' => $this->getLikedUsers(),
+//            'user_liked' => $this->getIfUserLiked($request->user()->user_id ?? false, $this->id),
 //                'comments' => $post->comments,
             'created_at' => $this->created_at->diffForHumans()
         ];

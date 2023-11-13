@@ -28,6 +28,7 @@ Route::middleware('auth:sanctum')->group(function () {
         Route::post('', [PostController::class, 'create']);
         Route::delete('/{post}', [PostController::class, 'delete']);
         Route::post('/like/{post}', [LikeController::class, 'like']);
+//        Route::post('/like/isLiked/{post}', [LikeController::class, 'getIsLiked']);
         Route::post('/dislike/{post}', [LikeController::class, 'dislike']);
     });
 
@@ -39,7 +40,7 @@ Route::middleware('auth:sanctum')->group(function () {
     });
 //    Route::post('/post', [PostController::class, 'create']);
 //    Route::post('/post/delete/{post}', [PostController::class, 'delete']);
-//    Route::post('/logout', [AuthController::class, 'logout']);
+    Route::post('/logout', [AuthController::class, 'logout']);
 //    Route::post('/post/comment/{post}', [CommentController::class, 'create']);
 //    Route::post('/post/like/{post}', [LikeController::class, 'like']);
 //    Route::post('/post/dislike/{post}', [LikeController::class, 'dislike']);

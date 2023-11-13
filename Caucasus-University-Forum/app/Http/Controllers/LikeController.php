@@ -24,10 +24,16 @@ class LikeController extends Controller
             $likeInstance->save();
         } else {
              // gavaketot unlike tu dalaiqebulia, da tu dadislike-ebulia mashin dislike wavshalot da mere davalaiqot
-            if($like->is_like === 1) {$like->delete();}
+            if($like->is_like === 1) {
+                $like->delete();
+                return response(new Like([
+                    'is_like' => 0
+                ]), 200);
+            }
             else {$like->delete(); $likeInstance->save();}
         }
 
+        return response($likeInstance, 200);
     }
     public function dislike(Request $request, Post $post)
     {
@@ -44,9 +50,18 @@ class LikeController extends Controller
             $dislikeInstance->save();
         } else {
             // gavaketot un-dislike
-            if($like->is_like === 0) {$like->delete();}
+            if($like->is_like === 0) {
+                $like->delete();
+                return response(new Like([
+                    'is_like' => 1
+                ], 200));
+            }
             else {$like->delete(); $dislikeInstance->save();}
         }
-
+        return response($dislikeInstance, 200);
     }
+//    public function getIsLiked(Request $request, Post $post)
+//    {
+//        return Like::getIfUserLiked($request, $post);
+//    }
 }

@@ -43,6 +43,15 @@ class Post extends Model
     {
         return $this->hasMany(Like::class);
     }
+    public function getLikedUsers()
+    {
+        return $this->likes()->get(['user_id', 'is_like'])->map(function ($like) {
+            return [
+                'user_id' => $like->user_id,
+                'is_like' => $like->is_like,
+            ];
+        })->all();
+    }
     public function totalLikes()
     {
         return $this->likes()->where('is_like', 1)->count();
