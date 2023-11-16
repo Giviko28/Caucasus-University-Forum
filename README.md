@@ -1,5 +1,5 @@
 # Caucasus-University-Forum
-A forum created by Caucasus University students, with the intention of connecting everyone across campus
+A forum created by Caucasus University students, with the intention of connecting everyone across campus.
 Built using React and Laravel
 ## How to setup
 1) make a .env file and paste whatever's inside .env.example
