@@ -1,6 +1,7 @@
 import axios from "axios";
 
 const axiosClient = axios.create({
+    // ეს მთლიანად .env-შია გასატანი
     baseURL: "http://localhost:8000/api"
 })
 
